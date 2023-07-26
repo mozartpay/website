@@ -15,18 +15,10 @@ export default function Settings() {
 	return (
 		<Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
 			<Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-				Please choose your payment method :
+				Enter the ammount :
 			</Text>
 			<SimpleGrid mb='20px' columns={{ sm: 2, md: 5 }} spacing={{ base: '20px', xl: '20px' }}>
-				<NFT
-					name='AIRTM'
-				
-					author='Make instant e-wallet deposit!'
-					image={Nft4}
-					currentbid='0.91 ETH'
-					download='/airtm'
-				/>
-
+			
 			</SimpleGrid>
 		</Box>
 	);

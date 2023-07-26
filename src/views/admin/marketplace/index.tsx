@@ -1,25 +1,3 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2022 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 import React from 'react';
 
 // Chakra imports
@@ -104,7 +82,6 @@ export default function Marketplace() {
 							<NFT
 								name='Abstract Colors'
 								author='By Esthera Jackson'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
 								image={Nft1}
 								currentbid='0.91 ETH'
 								download='#'
@@ -112,7 +89,6 @@ export default function Marketplace() {
 							<NFT
 								name='ETH AI Brain'
 								author='By Nick Wilson'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
 								image={Nft2}
 								currentbid='0.91 ETH'
 								download='#'
@@ -120,7 +96,7 @@ export default function Marketplace() {
 							<NFT
 								name='Mesh Gradients '
 								author='By Will Smith'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+								
 								image={Nft3}
 								currentbid='0.91 ETH'
 								download='#'
@@ -133,7 +109,7 @@ export default function Marketplace() {
 							<NFT
 								name='Swipe Circles'
 								author='By Peter Will'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+							
 								image={Nft4}
 								currentbid='0.91 ETH'
 								download='#'
@@ -141,7 +117,7 @@ export default function Marketplace() {
 							<NFT
 								name='Colorful Heaven'
 								author='By Mark Benjamin'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
+							
 								image={Nft5}
 								currentbid='0.91 ETH'
 								download='#'
@@ -149,7 +125,6 @@ export default function Marketplace() {
 							<NFT
 								name='3D Cubes Art'
 								author='By Manny Gates'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
 								image={Nft6}
 								currentbid='0.91 ETH'
 								download='#'

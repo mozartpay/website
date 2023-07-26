@@ -10,11 +10,10 @@ export default function NFT(props: {
 	image: string;
 	name: string;
 	author: string;
-	bidders: string[];
 	download: string;
 	currentbid: string | number;
 }) {
-	const { image, name, author, bidders, download, currentbid } = props;
+	const { image, name, author,  download, currentbid } = props;
 	const [ like, setLike ] = useState(false);
 	const textColor = useColorModeValue('navy.700', 'white');
 	const textColorBid = useColorModeValue('brand.500', 'white');
@@ -89,20 +88,7 @@ export default function NFT(props: {
 								{author}
 							</Text>
 						</Flex>
-						<AvatarGroup
-							max={3}
-							color={textColorBid}
-							size='sm'
-							mt={{
-								base: '0px',
-								md: '10px',
-								lg: '0px',
-								xl: '10px',
-								'2xl': '0px'
-							}}
-							fontSize='12px'>
-							{bidders.map((avt, key) => <Avatar key={key} src={avt} />)}
-						</AvatarGroup>
+						
 					</Flex>
 					<Flex
 						align={{
@@ -121,9 +107,6 @@ export default function NFT(props: {
 							'2xl': 'row'
 						}}
 						mt='25px'>
-						<Text fontWeight='700' fontSize='sm' color={textColorBid}>
-							Current Bid: {currentbid}
-						</Text>
 						<Link
 							href={download}
 							mt={{
@@ -141,7 +124,7 @@ export default function NFT(props: {
 								borderRadius='70px'
 								px='24px'
 								py='5px'>
-								Place Bid
+								Choose
 							</Button>
 						</Link>
 					</Flex>

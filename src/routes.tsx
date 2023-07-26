@@ -6,6 +6,7 @@ import MainDashboard from 'views/admin/default';
 import NFTMarketplace from 'views/admin/marketplace';
 import Profile from 'views/admin/profile';
 import DataTables from 'views/admin/dataTables';
+import Airtm from 'views/admin/airtm';
 import RTL from 'views/admin/rtl';
 
 // Auth Imports
@@ -33,6 +34,13 @@ const routes = [
 		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
 		path: '/data-tables',
 		component: DataTables
+	},
+	{
+		name: 'Airtm',
+		layout: '/pay',
+		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+		path: '/airtm',
+		component: Airtm
 	},
 	{
 		name: 'Profile',
