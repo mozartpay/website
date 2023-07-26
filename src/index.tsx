@@ -17,7 +17,7 @@ ReactDOM.render(
 					<Route path={`/admin`} component={AdminLayout} />
 					<Route path={`/airtm`} component={Airtm} />
 					<Route path={`/rtl`} component={RTLLayout} />
-					<Redirect from='/' to='/admin' />
+					
 				</Switch>
 			</HashRouter>
 		</React.StrictMode>

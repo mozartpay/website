@@ -29,7 +29,7 @@ const routes = [
 		secondary: true
 	},
 	{
-		name: 'Data Tables',
+		name: 'Payment',
 		layout: '/admin',
 		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
 		path: '/data-tables',

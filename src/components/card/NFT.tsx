@@ -125,6 +125,7 @@ export default function NFT(props: {
 								px='24px'
 								py='5px'>
 								Choose
+								
 							</Button>
 						</Link>
 					</Flex>
