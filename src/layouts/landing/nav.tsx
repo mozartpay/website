@@ -69,7 +69,7 @@ export default function Nav() {
                     justify={'flex-end'}
                     direction={'row'}
                     spacing={6}>
-                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/#/auth/sign-in'}>
                         Sign In
                     </Button>
                     <Button
@@ -79,7 +79,7 @@ export default function Nav() {
                         fontWeight={600}
                         color={'white'}
                         bg={'red.400'}
-                        href={'#'}
+                        href={'/#/signup'}
                         _hover={{
                             bg: 'pink.300',
                         }}>
@@ -245,7 +245,7 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
     {
-        label: 'Inspiration',
+        label: 'Features',
         children: [
             {
                 label: 'Explore Design Work',
@@ -260,7 +260,7 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: 'Find Work',
+        label: 'Industries',
         children: [
             {
                 label: 'Job Board',
@@ -275,11 +275,8 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: 'Learn Design',
+        label: 'Pricing',
         href: '#',
     },
-    {
-        label: 'Hire Designers',
-        href: '#',
-    },
+  
 ]

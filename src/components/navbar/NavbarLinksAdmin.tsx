@@ -14,12 +14,12 @@ import {
 	useColorModeValue,
 	useColorMode
 } from '@chakra-ui/react';
-// Custom Components
+import { useHistory } from 'react-router-dom';
 import { ItemContent } from 'components/menu/ItemContent';
 import { SearchBar } from 'components/navbar/searchBar/SearchBar';
 import { SidebarResponsive } from 'components/sidebar/Sidebar';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 // Assets
 import navImage from 'assets/img/layout/Navbar.png';
 import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
@@ -29,6 +29,7 @@ import routes from 'routes';
 export default function HeaderLinks(props: { secondary: boolean }) {
 	const { secondary } = props;
 	const { colorMode, toggleColorMode } = useColorMode();
+	const [userName, setName] = useState<string>('');
 	// Chakra Color Mode
 	const navbarIcon = useColorModeValue('gray.400', 'white');
 	let menuBg = useColorModeValue('white', 'navy.800');
@@ -43,6 +44,25 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 		'14px 17px 40px 4px rgba(112, 144, 176, 0.06)'
 	);
 	const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
+	const logout = () => {
+		// Remove user data from localStorage
+		localStorage.removeItem('user');
+
+		// Redirect the user to the desired page (e.g., '/')
+		window.location.href = '/';
+	};
+	useEffect(() => {
+		const userData = localStorage.getItem('user');
+		if (userData) {
+			const { name } = JSON.parse(userData);
+			setName(name);
+		}
+	}, []);
+	const history = useHistory();
+
+	const handleProfileSettingsClick = () => {
+		window.location.href ='/#/admin/profile'; 
+	};
 	return (
 		<Flex
 			w={{ sm: '100%', md: 'auto' }}
@@ -120,7 +140,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 				<MenuButton p='0px'>
 					<Icon mt='6px' as={MdInfoOutline} color={navbarIcon} w='18px' h='18px' me='10px' />
 				</MenuButton>
-				
+
 			</Menu>
 
 			<Button
@@ -145,7 +165,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 					<Avatar
 						_hover={{ cursor: 'pointer' }}
 						color='white'
-						name='Adela Parkson'
+						name={userName}
 						bg='#11047A'
 						size='sm'
 						w='40px'
@@ -164,22 +184,20 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 							fontSize='sm'
 							fontWeight='700'
 							color={textColor}>
-							👋&nbsp; Hey, Adela
+							👋&nbsp; Hey, {userName}
 						</Text>
 					</Flex>
 					<Flex flexDirection='column' p='10px'>
-						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius='8px' px='14px'>
+						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius='8px' px='14px' onClick={handleProfileSettingsClick} >
 							<Text fontSize='sm'>Profile Settings</Text>
-						</MenuItem>
-						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius='8px' px='14px'>
-							<Text fontSize='sm'>Newsletter Settings</Text>
 						</MenuItem>
 						<MenuItem
 							_hover={{ bg: 'none' }}
 							_focus={{ bg: 'none' }}
 							color='red.400'
 							borderRadius='8px'
-							px='14px'>
+							px='14px'
+							onClick={logout}>
 							<Text fontSize='sm'>Log out</Text>
 						</MenuItem>
 					</Flex>

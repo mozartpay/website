@@ -22,7 +22,7 @@ import Features from './Features'
 import Pricing from './pricing'
 export default function Home() {
   return (
-    <Container maxW={'7xl'}>
+    <Container maxW={'8xl'}>
         <Nav></Nav>
       <Stack
         align={'center'}
