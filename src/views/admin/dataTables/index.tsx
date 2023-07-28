@@ -45,7 +45,7 @@ export default function Settings() {
 					pointerEvents='none'
 					color='gray.300'
 					fontSize='1.2em'
-					children='€'
+					children='$'
 				/>
 				<Input
 					placeholder='Enter amount'
