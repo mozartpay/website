@@ -19,7 +19,7 @@ export default function Settings() {
 		try {
 			const response = await axios.post<{
 				[x: string]: any; data: any
-			}>('http://localhost:3001/api/airtm/create-payment', {
+			}>('https://mozart-7f31ad443ef1.herokuapp.com/api/airtm/create-payment', {
 				amount: amount,
 
 			});
