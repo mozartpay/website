@@ -44,7 +44,7 @@ function SignIn() {
 
   const handleSignIn = async () => {
     try {
-      const response = await fetch('https://mozart-7f31ad443ef1.herokuapp.com/api/signin', {
+      const response = await fetch('https://mozart-7f31ad443ef1.herokuapp.com/api/signin/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ function SignIn() {
         localStorage.setItem('user', JSON.stringify(userData));
 
         // Redirect the user to /admin
-        window.location.href = '/#/admin/default';
+        window.location.href = 'https://www.mozartpay.com/#/admin/default';
       } else {
         // Login failed, handle error scenario here
         console.log('Login Error:', responseData.message);
