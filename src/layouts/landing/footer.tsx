@@ -84,19 +84,20 @@ export default function Footer() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Logo color={useColorModeValue('gray.700', 'white')} />
+              MozartPay
+              {/* <Logo color={useColorModeValue('gray.700', 'white')} /> */}
             </Box>
             <Text fontSize={'sm'}>Join us and start receiving payments today.</Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
+              <SocialButton label={'X (Formerly Twitter)'} href={'https://twitter.com/mozartpay'}>
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
+              {/* <SocialButton label={'YouTube'} href={'#'}>
                 <FaYoutube />
               </SocialButton>
               <SocialButton label={'Instagram'} href={'#'}>
                 <FaInstagram />
-              </SocialButton>
+              </SocialButton> */}
             </Stack>
           </Stack>
           <Stack align={'flex-start'}>
