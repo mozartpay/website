@@ -15,7 +15,7 @@ import {
 import { ReactNode } from 'react'
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
-
+import logo from '../../assets/img/home/mozart.png'
 const Logo = (props: any) => {
 
   return (
@@ -84,19 +84,19 @@ export default function Footer() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Logo color={useColorModeValue('gray.700', 'white')} />
+            <img src={logo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
             </Box>
             <Text fontSize={'sm'}>Join us and start receiving payments today.</Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
+              <SocialButton label={'Twitter'} href={'https://twitter.com/Mozartpay'}>
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
+             {/**<SocialButton label={'YouTube'} href={'#'}>
                 <FaYoutube />
               </SocialButton>
               <SocialButton label={'Instagram'} href={'#'}>
                 <FaInstagram />
-              </SocialButton>
+              </SocialButton> */} 
             </Stack>
           </Stack>
           <Stack align={'flex-start'}>

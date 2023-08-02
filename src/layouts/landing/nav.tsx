@@ -23,7 +23,7 @@ import {
     ChevronRightIcon,
 } from '@chakra-ui/icons'
 import { Children } from 'react' 
-
+import logo from '../../assets/img/home/mozart.png'
 
 export default function Nav() {
     const { isOpen, onToggle } = useDisclosure()
@@ -52,12 +52,7 @@ export default function Nav() {
                     />
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                    <Text
-                        textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-                        fontFamily={'heading'}
-                        color={useColorModeValue('gray.800', 'white')}>
-                        Logo
-                    </Text>
+                <img src={logo} style={{ width: '100px', height: 'auto' }} alt="Logo" />
 
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                         <DesktopNav />
