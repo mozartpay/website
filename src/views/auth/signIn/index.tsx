@@ -62,7 +62,7 @@ function SignIn() {
         localStorage.setItem('user', JSON.stringify(userData));
 
         // Redirect the user to /admin
-        window.location.href = 'https://www.mozartpay.com/#/admin/default';
+        window.location.href = '/#/admin/default';
       } else {
         // Login failed, handle error scenario here
         console.log('Login Error:', responseData.message);
