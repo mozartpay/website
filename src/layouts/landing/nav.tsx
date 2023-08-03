@@ -24,6 +24,7 @@ import {
 } from '@chakra-ui/icons'
 import { Children } from 'react' 
 import logo from '../../assets/img/home/mozart.png'
+import { Link } from 'react-scroll';
 
 export default function Nav() {
     const { isOpen, onToggle } = useDisclosure()
@@ -97,7 +98,14 @@ const DesktopNav = () => {
 
     return (
         <Stack direction={'row'} spacing={4}>
+            
             {NAV_ITEMS.map((navItem) => (
+                 <Link
+                 to={navItem.href}
+                 smooth={true} // Enable smooth scrolling
+                 duration={500} // Set the scroll duration
+                 offset={-50} // Adjust the offset based on your layout
+             >
                 <Box key={navItem.label}>
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         
@@ -133,6 +141,7 @@ const DesktopNav = () => {
                         )}
                     </Popover>
                 </Box>
+                </Link>
             ))}
         </Stack>
     )
@@ -140,6 +149,12 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
     return (
+        <Link
+        to={href}
+        smooth={true} 
+        duration={500} 
+        offset={-50} 
+    >
         <Box
             as="a"
             href={href}
@@ -170,6 +185,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
                 </Flex>
             </Stack>
         </Box>
+        </Link>
     )
 }
 
@@ -241,37 +257,15 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
     {
         label: 'Features',
-        children: [
-            {
-                label: 'Explore Design Work',
-                subLabel: 'Trending Design to inspire you',
-                href: '#',
-            },
-            {
-                label: 'New & Noteworthy',
-                subLabel: 'Up-and-coming Designers',
-                href: '#',
-            },
-        ],
+        href: '#features',
     },
     {
         label: 'Industries',
-        children: [
-            {
-                label: 'Job Board',
-                subLabel: 'Find your dream design job',
-                href: '#',
-            },
-            {
-                label: 'Freelance Projects',
-                subLabel: 'An exclusive list for contract work',
-                href: '#',
-            },
-        ],
+        href: '#industries',
     },
     {
         label: 'Pricing',
-        href: '#',
+       href: '#pricing',
     },
   
 ]

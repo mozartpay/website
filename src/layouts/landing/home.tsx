@@ -20,6 +20,7 @@ import Footer from './footer'
 import Feature from './industries'
 import Features from './Features'
 import Pricing from './pricing'
+import { Element } from 'react-scroll';
 export default function Home() {
   return (
     <Container maxW={'8xl'}>
@@ -127,12 +128,17 @@ export default function Home() {
           </Box>
         </Flex>
       </Stack>
-     
+      <Element name="#features" className="element">
       <Features></Features>
+      </Element>
       
+      <Element name="#industries" className="element">
       <Feature></Feature>
+      </Element>
       <br></br>
+      <Element name="#pricing" className="element">
       <Pricing></Pricing>
+      </Element>
       <Footer></Footer>
     </Container>
   )

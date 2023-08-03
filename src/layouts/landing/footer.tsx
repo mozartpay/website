@@ -101,17 +101,11 @@ export default function Footer() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
-            <Box as="a" href={'#'}>
-              About us
-            </Box>
-            <Box as="a" href={'#'}>
-              Blog
-            </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'/#/contactUs'}>
               Contact us
             </Box>
-            <Box as="a" href={'#'}>
-              Pricing
+            <Box as="a" href={'/#/blogs'}>
+              Blog
             </Box>
             <Box as="a" href={'#'}>
               Testimonials
@@ -122,17 +116,17 @@ export default function Footer() {
             <Box as="a" href={'#'}>
               Help Center
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'/#/terms'}>
               Terms of Service
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'/#/imprint'}>
               Legal
             </Box>
-            <Box as="a" href={'#'}>
+            <Box as="a" href={'/#/privacy'}>
               Privacy Policy
             </Box>
-            <Box as="a" href={'#'}>
-              Satus
+            <Box as="a" href={'/#/docs'}>
+              Docs
             </Box>
           </Stack>
           <Stack align={'flex-start'}>

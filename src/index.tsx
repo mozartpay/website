@@ -6,6 +6,12 @@ import AuthLayout from './layouts/auth';
 import SignUp from './views/auth/signUp'
 import AdminLayout from './layouts/admin';
 import Home from './layouts/landing';
+import Terms from './layouts/terms/home';
+import Privacy from './layouts/Privacy/home';
+import Contact from './layouts/contact/home';
+import Imprint from './layouts/imprint/home';
+import Docs from './layouts/docs/home';
+import Blogs from './layouts/blog/home';
 import RTLLayout from './layouts/rtl';
 import SuccessPage from './layouts/transaction/confirm'
 import RejectPage from './layouts/transaction/rejected'
@@ -23,6 +29,12 @@ ReactDOM.render(
 					<Route path={`/airtm`} component={Airtm} />
 					<Route path={`/rtl`} component={RTLLayout} />
 					<Route path={`/home`} component={Home} />
+					<Route path={`/terms`} component={Terms} />
+					<Route path={`/imprint`} component={Imprint} />
+					<Route path={`/docs`} component={Docs} />
+					<Route path={`/contactUs`} component={Contact} />
+					<Route path={`/privacy`} component={Privacy} />
+					<Route path={`/blogs`} component={Blogs} />
 					<Route path={`/signup`} component={SignUp} />
 					<Route path={`/confirm`} component={SuccessPage} />
 					<Route path={`/cancel`} component={RejectPage} />
