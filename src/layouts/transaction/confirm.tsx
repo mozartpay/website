@@ -3,6 +3,12 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios'; 
 
+function formatDate(isoDate: string | undefined): string {
+  if (!isoDate) return '';
+  const date = new Date(isoDate);
+  return date.toISOString().split('T')[0];
+}
+
 const SuccessPage: React.FC = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -27,7 +33,7 @@ const SuccessPage: React.FC = () => {
       <p style={{ fontSize: '18px', marginTop: '10px' }}>Transaction via Airtm</p>
       <p style={{ fontSize: '18px', marginTop: '10px' }}>Transaction ID: {purchase?.id}</p>
       <p style={{ fontSize: '18px', marginTop: '10px' }}>Amount: {purchase?.amount}</p>
-      <p style={{ fontSize: '18px', marginTop: '10px' }}>Date: {purchase?.created_at}</p>
+      <p style={{ fontSize: '18px', marginTop: '10px' }}>Date: {formatDate(purchase?.created_at)}</p>
       <p style={{ fontSize: '18px', marginTop: '10px' }}>Status: {purchase?.status}</p>
     </div>
   );
