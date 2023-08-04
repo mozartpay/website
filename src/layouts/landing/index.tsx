@@ -55,7 +55,7 @@ export default function Landing() {
 						<Box mx='auto' minH='100vh'>
 							<Switch>
 								{getRoutes(routes)}
-								<Redirect from='/home' to='/home/landing
+								<Redirect from='/home' to='/home
                   ' />
 							</Switch>
 						</Box>

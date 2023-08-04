@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/App.css';
-import { HashRouter,BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AuthLayout from './layouts/auth';
 import SignUp from './views/auth/signUp'
 import AdminLayout from './layouts/admin';
-import Home from './layouts/landing';
+import Home from './layouts/landing/home';
 import Terms from './layouts/terms/home';
 import Privacy from './layouts/Privacy/home';
 import Contact from './layouts/contact/home';
