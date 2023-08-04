@@ -65,7 +65,7 @@ export default function Nav() {
                     justify={'flex-end'}
                     direction={'row'}
                     spacing={6}>
-                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/#/auth/sign-in'}>
+                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/auth/sign-in'}>
                         Sign In
                     </Button>
                     <Button
@@ -75,7 +75,7 @@ export default function Nav() {
                         fontWeight={600}
                         color={'white'}
                         bg={'red.400'}
-                        href={'/#/signup'}
+                        href={'/signup'}
                         _hover={{
                             bg: 'pink.300',
                         }}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/App.css';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter,BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AuthLayout from './layouts/auth';
 import SignUp from './views/auth/signUp'
 import AdminLayout from './layouts/admin';
@@ -22,7 +22,7 @@ import Airtm from 'views/admin/airtm';
 ReactDOM.render(
 	<ChakraProvider theme={theme}>
 		<React.StrictMode>
-			<HashRouter>
+		<BrowserRouter>
 				<Switch>
 					<Route path={`/auth`} component={AuthLayout} />
 					<Route path={`/admin`} component={AdminLayout} />
@@ -41,7 +41,7 @@ ReactDOM.render(
 					<Route path={`/callback`} component={FailurePage} />
 					<Redirect from='/' to='/home' />
 				</Switch>
-			</HashRouter>
+				</BrowserRouter>
 		</React.StrictMode>
 	</ChakraProvider>,
 	document.getElementById('root')

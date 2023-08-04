@@ -61,7 +61,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 	const history = useHistory();
 
 	const handleProfileSettingsClick = () => {
-		window.location.href ='/#/admin/profile'; 
+		window.location.href ='/admin/profile'; 
 	};
 	return (
 		<Flex

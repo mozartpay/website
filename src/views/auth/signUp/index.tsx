@@ -64,7 +64,7 @@ function SignIn() {
             localStorage.setItem('user', JSON.stringify(userData));
       
             // Redirect the user to /admin
-            window.location.href = '/#/admin/default';
+            window.location.href = '/admin/default';
           } else {
             const data = await response.json();
             console.log('Signup Error:', data.message); // Display the error message sent from the server
