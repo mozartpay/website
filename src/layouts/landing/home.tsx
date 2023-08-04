@@ -21,6 +21,7 @@ import Feature from './industries'
 import Features from './Features'
 import Pricing from './pricing'
 import { Element } from 'react-scroll';
+import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <Container maxW={'8xl'}>
@@ -61,6 +62,7 @@ export default function Home() {
           Unlock access to the new era of payments!
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
+          <Link to="/auth/sign-in">
             <Button
               rounded={'full'}
               size={'lg'}
@@ -71,14 +73,17 @@ export default function Home() {
               _hover={{ bg: 'red.500' }}>
               Get started
             </Button>
-            <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={'normal'}
-              px={6}
-              leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
-              How It Works
-            </Button>
+            </Link>
+            <Link to="/contactUs">
+        <Button
+          rounded={'full'}
+          size={'lg'}
+          fontWeight={'normal'}
+          px={6}
+        >
+          Contact Us
+        </Button>
+      </Link>
           </Stack>
         </Stack>
         <Flex
