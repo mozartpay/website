@@ -20,14 +20,7 @@ const routes = [
 		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
 		component: MainDashboard
 	},
-	/*{
-		name: 'NFT Marketplace',
-		layout: '/admin',
-		path: '/nft-marketplace',
-		icon: <Icon as={MdOutlineShoppingCart} width='20px' height='20px' color='inherit' />,
-		component: NFTMarketplace,
-		secondary: true
-	},*/
+	
 	{
 		name: 'Payment',
 		layout: '/admin',
@@ -49,20 +42,6 @@ const routes = [
 		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
 		component: Profile
 	},
-	{
-		name: 'Sign In',
-		layout: '/auth',
-		path: '/sign-in',
-		icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
-		component: SignInCentered
-	},
-	/*{
-		name: 'RTL Admin',
-		layout: '/rtl',
-		path: '/rtl-default',
-		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
-		component: RTL
-	},*/
 	{
 		name: 'Home',
 		layout: '/home',

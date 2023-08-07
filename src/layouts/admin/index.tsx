@@ -7,7 +7,7 @@ import Sidebar from 'components/sidebar/Sidebar';
 import { SidebarContext } from 'contexts/SidebarContext';
 import { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import routes from 'routes';
+import routes from 'router';
 
 // Custom Chakra theme
 export default function Dashboard(props: { [x: string]: any }) {
