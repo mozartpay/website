@@ -17,7 +17,7 @@ const RejectPage: React.FC = () => {
   const [purchase, setPurchase] = useState<any>(null);
 
   useEffect(() => {
-    axios.get(`https://mozart-7f31ad443ef1.herokuapp.com/api/airtm/fetch/${code}`)
+    axios.get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/fetch/${code}`)
       .then((response) => {
         setPurchase(response.data.purchase);
       })

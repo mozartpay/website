@@ -1,30 +1,8 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
 
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2022 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-// Chakra imports
 import { Avatar, Box, Flex, FormLabel, Icon, Select, SimpleGrid, useColorModeValue } from '@chakra-ui/react';
-// Assets
 import Usa from 'assets/img/dashboards/usa.png';
-// Custom components
+import * as React from 'react';
+import axios from 'axios';
 import MiniCalendar from 'components/calendar/MiniCalendar';
 import MiniStatistics from 'components/card/MiniStatistics';
 import IconBox from 'components/icons/IconBox';
@@ -39,8 +17,36 @@ import WeeklyRevenue from 'views/admin/default/components/WeeklyRevenue';
 import tableDataCheck from 'views/admin/default/variables/tableDataCheck';
 import tableDataComplex from 'views/admin/default/variables/tableDataComplex';
 import airtm from '../../../assets/img/dashboards/0x0.png'
+
+
+type RowObj = {
+	transaction: string;
+	amount: string;
+	balence: number;
+	company: string;
+	status: string;
+	date: string;
+
+
+};
+
+
 export default function UserReports() {
-	// Chakra Color Mode
+	const userData = localStorage.getItem('user');
+	const { email } = JSON.parse(userData);
+	const [defaultData, setDefaultData] = React.useState<RowObj[]>([]);
+	const [data, setData] = React.useState<RowObj[]>(defaultData);
+	React.useEffect(() => {
+		
+		axios
+		  .get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/purchases/${email}`) 
+		  .then((response) => {
+			setDefaultData(response.data.purchases); 
+		  })
+		  .catch((error) => {
+			console.error('Error fetching purchase data:', error);
+		  });
+	  }, [email]);
 	const brandColor = useColorModeValue('brand.500', 'white');
 	const boxBg = useColorModeValue('secondaryGray.300', 'whiteAlpha.100');
 	return (
@@ -92,7 +98,7 @@ export default function UserReports() {
 				</SimpleGrid>
 			</SimpleGrid>*/}
 			<SimpleGrid >
-				<ComplexTable tableData={tableDataComplex} />
+			<ComplexTable />
 				{/*<SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
 					<Tasks />
 					<MiniCalendar h='100%' minW='100%' selectRange={false} />

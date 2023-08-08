@@ -14,13 +14,18 @@ export default function Settings() {
 	const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		setAmount(event.target.value);
 	};
-
+	const userData = localStorage.getItem('user');
+	
+		
+		const { email } = JSON.parse(userData);
+		
 	const handlePayment = async () => {
 		try {
 			const response = await axios.post<{
 				[x: string]: any; data: any
-			}>('https://mozart-7f31ad443ef1.herokuapp.com/api/airtm/create-payment', {
+			}>('https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/create-payment', {
 				amount: amount,
+				email:email,
 
 			});
 			const id = response.data.data.id;

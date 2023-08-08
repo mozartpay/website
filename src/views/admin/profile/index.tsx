@@ -1,24 +1,36 @@
 import { Box, Grid } from '@chakra-ui/react';
-import React, { useState, ChangeEvent, useEffect } from 'react';
-// Custom components
+import React, { useState, useEffect } from 'react';
 import Banner from 'views/admin/profile/components/Banner';
 import General from 'views/admin/profile/components/General';
 import Notifications from 'views/admin/profile/components/Notifications';
 import Projects from 'views/admin/profile/components/Projects';
 import Storage from 'views/admin/profile/components/Storage';
 import Upload from 'views/admin/profile/components/Upload';
-
-// Assets
+import axios from 'axios'; 
 import banner from 'assets/img/auth/banner.png';
 import avatar from 'assets/img/avatars/avatar4.png';
 
 export default function Overview() {
 	const [userName, setName] = useState<string>('');
+	const [userImage, setUserImage] = useState<string | null>(null); 
+
+
 	useEffect(() => {
 		const userData = localStorage.getItem('user');
 		if (userData) {
 			const { name } = JSON.parse(userData);
+			const { email } = JSON.parse(userData);
 			setName(name);
+
+		
+			axios.get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/profile/${email}`) 
+				.then(response => {
+					console.log('image profile')
+					setUserImage(response.data.image);
+				})
+				.catch(error => {
+					console.error('Error fetching user information:', error);
+				});
 		}
 	}, []);
 	return (
@@ -35,9 +47,9 @@ export default function Overview() {
 				}}
 				gap={{ base: '20px', xl: '20px' }}>
 				<Banner
-					gridArea='1 / 1 / 3 / 3'
+					gridArea='1 / 1 / 1 / 3'
 					banner={banner}
-					avatar={avatar}
+					avatar={userImage || avatar} 
 					name={userName}
 					job='Product Designer'
 					posts='17'

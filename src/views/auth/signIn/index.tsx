@@ -44,7 +44,7 @@ function SignIn() {
 
   const handleSignIn = async () => {
     try {
-      const response = await fetch('https://mozart-7f31ad443ef1.herokuapp.com/api/signin/', {
+      const response = await fetch('https://mozart-api-21ea5fd801a8.herokuapp.com/api/signin/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
