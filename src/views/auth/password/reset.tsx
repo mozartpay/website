@@ -171,14 +171,14 @@ function Password() {
                         maxW='100%'
                         mt='0px'>
                         <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-                            Sign in
+                            Go back to Sign in ?
                             <NavLink to='/auth/sign-in'>
                                 <Text
                                     color={textColorBrand}
                                     as='span'
                                     ms='5px'
                                     fontWeight='500'>
-                                    Create an Account
+                                    Signin
                                 </Text>
                             </NavLink>
                         </Text>
