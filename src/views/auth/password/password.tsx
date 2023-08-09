@@ -30,7 +30,7 @@ interface UserData {
   name: string;
 }
 
-function SignIn() {
+function Password() {
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
@@ -42,36 +42,23 @@ function SignIn() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const handleSignIn = async () => {
-    try {
-      const response = await fetch('https://mozart-api-21ea5fd801a8.herokuapp.com/api/signin/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
+  const handleSubmit = () => {
+    // Trigger API request to initiate password reset process
+    fetch('https://mozart-api-21ea5fd801a8.herokuapp.com/api/signin/reset-password', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        alert('A reset link is sent to your Email!'); 
+      })
+      .catch((error) => {
+        console.log(error);
       });
-
-      const responseData = await response.json();
-
-      if (response.ok) {
-        // Login successful, handle success scenario here
-        const userData: UserData = responseData.user;
-
-        // Store user data in localStorage
-        localStorage.setItem('user', JSON.stringify(userData));
-
-        // Redirect the user to /admin
-        window.location.href = '/admin/default';
-      } else {
-        // Login failed, handle error scenario here
-        console.log('Login Error:', responseData.message);
-        alert('Signin failed. Please check your email and password.');
-      }
-    } catch (error) {
-      console.error('Error during signin:', error);
-      alert('Error during signin. Please try again later.');
-    }
   };
 
   return (
@@ -90,7 +77,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign In
+            Reset Password 
           </Heading>
           <Text
             mb='36px'
@@ -98,7 +85,7 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign in!
+            Enter your email So we can send you a link to reset you password!
           </Text>
         </Box>
         <Flex
@@ -137,62 +124,7 @@ function SignIn() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
         
             />
-            <FormLabel
-              ms='4px'
-              fontSize='sm'
-              fontWeight='500'
-              color={textColor}
-              display='flex'>
-              Password<Text color={brandStars}>*</Text>
-            </FormLabel>
-            <InputGroup size='md'>
-              <Input
-                isRequired={true}
-                fontSize='sm'
-                placeholder='Min. 8 characters'
-                mb='24px'
-                size='lg'
-                type={show ? "text" : "password"}
-                variant='auth'
-                value={password}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-          
-              />
-              <InputRightElement display='flex' alignItems='center' mt='4px'>
-                <Icon
-                  color={textColorSecondary}
-                  _hover={{ cursor: "pointer" }}
-                  as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}
-                  onClick={handleClick}
-                />
-              </InputRightElement>
-            </InputGroup>
-            <Flex justifyContent='space-between' align='center' mb='24px'>
-              <FormControl display='flex' alignItems='center'>
-                <Checkbox
-                  id='remember-login'
-                  colorScheme='brandScheme'
-                  me='10px'
-                />
-                <FormLabel
-                  htmlFor='remember-login'
-                  mb='0'
-                  fontWeight='normal'
-                  color={textColor}
-                  fontSize='sm'>
-                  Keep me logged in
-                </FormLabel>
-              </FormControl>
-              <NavLink to='/forgot_password'>
-                <Text
-                  color={textColorBrand}
-                  fontSize='sm'
-                  w='124px'
-                  fontWeight='500'>
-                  Forgot password?
-                </Text>
-              </NavLink>
-            </Flex>
+            
             <Button
               fontSize='sm'
               variant='brand'
@@ -200,9 +132,9 @@ function SignIn() {
               w='100%'
               h='50'
               mb='24px'
-              onClick={handleSignIn}
+              onClick={handleSubmit}
               >
-              Sign In
+             Reset 
             </Button>
           </FormControl>
           <Flex
@@ -230,4 +162,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default Password;

@@ -23,6 +23,10 @@ import Pricing from './pricing'
 import { Element } from 'react-scroll';
 import { Link } from 'react-router-dom';
 export default function Home() {
+  const bgColor = useColorModeValue('red.50', 'red.400'); 
+  const userData = localStorage.getItem('user');
+  if (!userData) {
+  
   return (
     <Container maxW={'8xl'}>
         <Nav></Nav>
@@ -99,7 +103,7 @@ export default function Home() {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
+            color={bgColor}
           />
           <Box
             position={'relative'}
@@ -146,7 +150,11 @@ export default function Home() {
       </Element>
       <Footer></Footer>
     </Container>
-  )
+  )}
+  else{
+    window.location.href = '/admin/default';
+    return null;
+  }
 }
 
 const PlayIcon = createIcon({

@@ -74,16 +74,16 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
         <div style={{ width: '100%', textAlign: 'center', marginBottom: '30px',  marginTop: '40px', marginLeft:'150px' }}>
           <input type='file' id='image' onChange={onChangeImage} />
         </div>
-        <Flex direction='column' pe='44px'>
+        <Flex direction='column'  alignItems='center' >
           <Text
             color={textColorPrimary}
             fontWeight='bold'
             textAlign='start'
             fontSize='1xl'
             mt={{ base: '20px', '2xl': '50px' }}>
-            Complete your profile
+            (PS: The image must not be too big!)
           </Text>
-          <Flex w='100%'>
+          <Flex w='100%'  alignItems='center'>
             <Button
               me='100%'
               mb='50px'
