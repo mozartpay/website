@@ -1,23 +1,13 @@
 
 import { Avatar, Box, Flex, FormLabel, Icon, Select, SimpleGrid, useColorModeValue } from '@chakra-ui/react';
-import Usa from 'assets/img/dashboards/usa.png';
 import * as React from 'react';
 import axios from 'axios';
-import MiniCalendar from 'components/calendar/MiniCalendar';
 import MiniStatistics from 'components/card/MiniStatistics';
 import IconBox from 'components/icons/IconBox';
 import { MdAddTask, MdAttachMoney, MdBarChart, MdFileCopy } from 'react-icons/md';
-import CheckTable from 'views/admin/rtl/components/CheckTable';
 import ComplexTable from 'views/admin/default/components/ComplexTable';
-import DailyTraffic from 'views/admin/default/components/DailyTraffic';
-import PieCard from 'views/admin/default/components/PieCard';
-import Tasks from 'views/admin/default/components/Tasks';
-import TotalSpent from 'views/admin/default/components/TotalSpent';
-import WeeklyRevenue from 'views/admin/default/components/WeeklyRevenue';
-import tableDataCheck from 'views/admin/default/variables/tableDataCheck';
-import tableDataComplex from 'views/admin/default/variables/tableDataComplex';
 import airtm from '../../../assets/img/dashboards/0x0.png'
-
+import ComplexTableOrder  from 'views/admin/default/components/ComplexTableOrder';
 
 type RowObj = {
 	transaction: string;
@@ -99,6 +89,7 @@ export default function UserReports() {
 			</SimpleGrid>*/}
 			<SimpleGrid >
 			<ComplexTable />
+			<ComplexTableOrder />
 				{/*<SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
 					<Tasks />
 					<MiniCalendar h='100%' minW='100%' selectRange={false} />

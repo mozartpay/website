@@ -4,7 +4,6 @@ import Banner from 'views/admin/profile/components/Banner';
 import General from 'views/admin/profile/components/General';
 import Notifications from 'views/admin/profile/components/Notifications';
 import Projects from 'views/admin/profile/components/Projects';
-import Storage from 'views/admin/profile/components/Storage';
 import Upload from 'views/admin/profile/components/Upload';
 import axios from 'axios'; 
 import banner from 'assets/img/auth/banner.png';
@@ -13,7 +12,7 @@ import avatar from 'assets/img/avatars/avatar4.png';
 export default function Overview() {
 	const [userName, setName] = useState<string>('');
 	const [userImage, setUserImage] = useState<string | null>(null); 
-
+	const [userEmail, setUserEmail] = useState<string | null>(null); 
 
 	useEffect(() => {
 		const userData = localStorage.getItem('user');
@@ -21,6 +20,7 @@ export default function Overview() {
 			const { name } = JSON.parse(userData);
 			const { email } = JSON.parse(userData);
 			setName(name);
+			setUserEmail(email)
 
 		
 			axios.get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/profile/${email}`) 
@@ -51,7 +51,7 @@ export default function Overview() {
 					banner={banner}
 					avatar={userImage || avatar} 
 					name={userName}
-					job='Product Designer'
+					job={userEmail}
 					posts='17'
 					followers='9.7k'
 					following='274'
