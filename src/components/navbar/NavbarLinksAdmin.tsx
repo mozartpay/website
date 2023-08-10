@@ -1,5 +1,5 @@
-// Chakra Imports
 import {
+	Input,
 	Avatar,
 	Button,
 	Flex,
@@ -12,8 +12,19 @@ import {
 	MenuList,
 	Text,
 	useColorModeValue,
-	useColorMode
+	useColorMode,
+	useToast
 } from '@chakra-ui/react';
+import {
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalFooter,
+	ModalBody,
+	ModalCloseButton,
+} from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
 import { useHistory } from 'react-router-dom';
 import { ItemContent } from 'components/menu/ItemContent';
 import { SearchBar } from 'components/navbar/searchBar/SearchBar';
@@ -26,10 +37,16 @@ import { MdNotificationsNone, MdInfoOutline } from 'react-icons/md';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { FaEthereum } from 'react-icons/fa';
 import routes from 'routes';
+import axios from 'axios';
+import { useRef } from 'react';
+import copy from 'clipboard-copy';
+
+
 export default function HeaderLinks(props: { secondary: boolean }) {
 	const { secondary } = props;
 	const { colorMode, toggleColorMode } = useColorMode();
 	const [userName, setName] = useState<string>('');
+	const [userToken, setToken] = useState<string>('');
 	// Chakra Color Mode
 	const navbarIcon = useColorModeValue('gray.400', 'white');
 	let menuBg = useColorModeValue('white', 'navy.800');
@@ -51,18 +68,75 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 		// Redirect the user to the desired page (e.g., '/')
 		window.location.href = '/';
 	};
+	const inputRef = useRef(null);
+	const toast = useToast();
+	const [isCopied, setIsCopied] = useState(false);
+	const copyToken = () => {
+		if (inputRef.current) {
+			copy(inputRef.current.value);
+			setIsCopied(true);
+
+			// Show a success toast
+			toast({
+				title: 'Token Copied',
+				description: 'The token has been copied to the clipboard.',
+				status: 'success',
+				duration: 3000,
+				isClosable: true,
+			});
+
+			// Reset the copied state after a brief duration
+			setTimeout(() => {
+				setIsCopied(false);
+			}, 3000);
+		}
+	};
 	useEffect(() => {
 		const userData = localStorage.getItem('user');
 		if (userData) {
 			const { name } = JSON.parse(userData);
+			const { email } = JSON.parse(userData);
 			setName(name);
+
+			axios.get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/profile/${email}`)
+				.then(response => {
+					console.log('token', response.data.token)
+					setToken(response.data.token);
+				})
+				.catch(error => {
+					console.error('Error fetching user information:', error);
+				});
+
 		}
 	}, []);
 	const history = useHistory();
 
 	const handleProfileSettingsClick = () => {
-		window.location.href ='/admin/profile'; 
+		window.location.href = '/admin/profile';
 	};
+
+
+	const OverlayOne = () => (
+		<ModalOverlay
+			bg='blackAlpha.300'
+			backdropFilter='blur(10px) hue-rotate(90deg)'
+		/>
+	)
+
+	const OverlayTwo = () => (
+		<ModalOverlay
+			bg='none'
+			backdropFilter='auto'
+			backdropInvert='80%'
+			backdropBlur='2px'
+		/>
+	)
+
+	const { isOpen, onOpen, onClose } = useDisclosure()
+	const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
+
+
 	return (
 		<Flex
 			w={{ sm: '100%', md: 'auto' }}
@@ -191,6 +265,12 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius='8px' px='14px' onClick={handleProfileSettingsClick} >
 							<Text fontSize='sm'>Profile Settings</Text>
 						</MenuItem>
+						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius='8px' px='14px' onClick={() => {
+							setOverlay(<OverlayTwo />)
+							onOpen()
+						}}>
+							<Text fontSize='sm'>Ask for token</Text>
+						</MenuItem>
 						<MenuItem
 							_hover={{ bg: 'none' }}
 							_focus={{ bg: 'none' }}
@@ -203,6 +283,22 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 					</Flex>
 				</MenuList>
 			</Menu>
+			<Modal isCentered isOpen={isOpen} onClose={onClose}>
+				{overlay}
+				<ModalContent>
+					<ModalHeader>Token</ModalHeader>
+					<ModalCloseButton />
+					<ModalBody>
+						<Input ref={inputRef} value={userToken} />
+					</ModalBody>
+					<ModalFooter>
+						<Button onClick={copyToken} disabled={isCopied}>
+							{isCopied ? 'Copied!' : 'Copy'}
+						</Button>
+					</ModalFooter>
+				</ModalContent>
+			</Modal>
+
 		</Flex>
 	);
 }
