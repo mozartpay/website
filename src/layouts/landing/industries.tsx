@@ -16,8 +16,8 @@ const Feature = ({ title, text, icon }: FeatureProps) => {
   return (
     <Stack>
       <Flex
-        w={16}
-        h={16}
+        w={40}
+        h={20}
         align={'center'}
         justify={'center'}
         color={'white'}
@@ -41,7 +41,7 @@ export default function SimpleThreeColumns() {
      
         <Feature
          icon={
-            <img src={rem} alt="Remittance Icon"width={150} height={150}/>
+            <img src={rem} alt="Remittance Icon" style={{ width: '500px', height: '100px' }}/>
           }
           title={'Remittance'}
           text={
@@ -50,7 +50,7 @@ export default function SimpleThreeColumns() {
         />
         <Feature
          icon={
-            <img src={gam} alt="Remittance Icon" style={{ width: '300px', height: '100px' }}/>
+            <img src={gam} alt="Remittance Icon" style={{ width: '500px', height: '100px' }}/>
           }
           title={'Gaming and entertainment'}
           text={
@@ -59,7 +59,7 @@ export default function SimpleThreeColumns() {
         />
         <Feature
            icon={
-            <img src={tra} alt="Remittance Icon" width={100} height={100} />
+            <img src={tra} alt="Remittance Icon" style={{ width: '500px', height: '100px' }} />
           }
           title={'Tourism and Leisure'}
           text={

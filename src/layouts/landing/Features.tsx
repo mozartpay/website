@@ -52,17 +52,17 @@ export default function SplitWithImage() {
             <Features
               icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'Business Planning'}
+              text={'Comprehensive Integration'}
             />
             <Features
               icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
+              text={'Multi-platform Support'}
             />
             <Features
               icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
+              text={'Seamless Checkout Experience'}
             />
           </Stack>
         </Stack>
@@ -104,17 +104,17 @@ export default function SplitWithImage() {
             <Features
               icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'Business Planning'}
+              text={'Advanced Fraud Detection'}
             />
             <Features
               icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
+              text={'Real-time Alerts'}
             />
             <Features
               icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
+              text={'Secure Encryption Protocols'}
             />
           </Stack>
         </Stack>
@@ -137,17 +137,17 @@ export default function SplitWithImage() {
             <Features
               icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'Business Planning'}
+              text={'User-friendly Interface'}
             />
             <Features
               icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
+              text={'Instant Verification'}
             />
             <Features
               icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
+              text={'24/7 Customer Support'}
             />
           </Stack>
         </Stack>
@@ -189,17 +189,17 @@ export default function SplitWithImage() {
             <Features
               icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'Business Planning'}
+              text={'Currency Conversion'}
             />
             <Features
               icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
+              text={'Competitive Rates'}
             />
             <Features
               icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
+              text={'Real-time Transfers'}
             />
           </Stack>
         </Stack>
