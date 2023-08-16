@@ -109,22 +109,26 @@ export default function ComplexTable() {
 						h='24px'
 						me='5px'
 						color={
-							info.getValue() === 'created'
+							info.getValue() === 'Confirmed'
 								? 'green.500'
-								: info.getValue() === 'Disable'
-									? 'red.500'
-									: info.getValue() === 'Error'
-										? 'orange.500'
-										: null
+								: info.getValue() === 'created'
+									? 'grey.500'
+									: info.getValue() === 'Rejected'
+										? 'red.500'
+										: info.getValue() === 'Failed'
+											? 'red.500'
+											: null
 						}
 						as={
-							info.getValue() === 'created'
+							info.getValue() === 'Confirmed'
 								? MdCheckCircle
-								: info.getValue() === 'Disable'
+								: info.getValue() === 'Rejected'
 									? MdCancel
-									: info.getValue() === 'Error'
+									: info.getValue() === 'created'
 										? MdOutlineError
-										: null
+										: info.getValue() === 'Failed'
+											? MdCancel
+											: null
 						}
 					/>
 					<Text color={textColor} fontSize='sm' fontWeight='700'>

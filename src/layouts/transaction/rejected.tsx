@@ -15,7 +15,21 @@ const RejectPage: React.FC = () => {
   const code = searchParams.get('code');
 
   const [purchase, setPurchase] = useState<any>(null);
+  const handleMarkCreated = async () => {
+    try {
+      const response = await fetch(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/rejected/${code}`, {
+        method: 'PATCH',
+      });
 
+      if (response.ok) {
+        console.log('Purchase status updated to rejected');
+      } else {
+        console.error('Failed to update purchase status');
+      }
+    } catch (error) {
+      console.error('Error updating purchase status:', error);
+    }
+  };
   useEffect(() => {
     axios.get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/fetch/${code}`)
       .then((response) => {
@@ -24,6 +38,7 @@ const RejectPage: React.FC = () => {
       .catch((error) => {
         console.error(error);
       });
+      handleMarkCreated();
   }, [code]);
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
