@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios'; 
+import axios from 'axios';
 
 function formatDate(isoDate: string | undefined): string {
   if (!isoDate) return '';
@@ -16,6 +16,21 @@ const SuccessPage: React.FC = () => {
 
   const [purchase, setPurchase] = useState<any>(null);
 
+  const handleMarkCreated = async () => {
+    try {
+      const response = await fetch(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/confirmed/${code}`, {
+        method: 'PATCH',
+      });
+
+      if (response.ok) {
+        console.log('Purchase status updated to confirmed');
+      } else {
+        console.error('Failed to update purchase status');
+      }
+    } catch (error) {
+      console.error('Error updating purchase status:', error);
+    }
+  };
   useEffect(() => {
     axios.get(`https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/fetch/${code}`)
       .then((response) => {
@@ -24,6 +39,9 @@ const SuccessPage: React.FC = () => {
       .catch((error) => {
         console.error(error);
       });
+
+
+    handleMarkCreated()
   }, [code]);
 
   return (
