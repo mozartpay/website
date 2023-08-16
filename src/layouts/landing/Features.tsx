@@ -15,6 +15,16 @@ import {
 import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5'
 import { ReactElement } from 'react'
 import comp from '../../assets/img/home/comp.png'
+import f1 from '../../assets/img/home/Seamless.png'
+import f2 from '../../assets/img/home/Comprehensive.png'
+import f3 from '../../assets/img/home/Multi-platform .png'
+import f4 from '../../assets/img/home/Encryption.png'
+import f5 from '../../assets/img/home/app.png'
+import f6 from '../../assets/img/home/detection.png'
+import f7 from '../../assets/img/home/telephone.png'
+import f8 from '../../assets/img/home/real-time.png'
+import f9 from '../../assets/img/home/conversion.png'
+import f10 from '../../assets/img/home/benefit.png'
 interface FeaturesProps {
   text: string
   iconBg: string
@@ -50,17 +60,17 @@ export default function SplitWithImage() {
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
             }>
             <Features
-              icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+               icon={<Image src={f2} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
               text={'Comprehensive Integration'}
             />
             <Features
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+              icon={<Image src={f3} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
               text={'Multi-platform Support'}
             />
             <Features
-              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+               icon={<Image src={f1} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
               text={'Seamless Checkout Experience'}
             />
@@ -102,17 +112,17 @@ export default function SplitWithImage() {
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
             }>
             <Features
-              icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+               icon={<Image src={f6} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
               text={'Advanced Fraud Detection'}
             />
             <Features
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+               icon={<Image src={f5} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
               text={'Real-time Alerts'}
             />
             <Features
-              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+               icon={<Image src={f4} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
               text={'Secure Encryption Protocols'}
             />
@@ -135,17 +145,17 @@ export default function SplitWithImage() {
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
             }>
             <Features
-              icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+                icon={<Image src={f1} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
               text={'User-friendly Interface'}
             />
             <Features
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+               icon={<Image src={f5} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
               text={'Instant Verification'}
             />
             <Features
-              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+             icon={<Image src={f7} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
               text={'24/7 Customer Support'}
             />
@@ -187,17 +197,17 @@ export default function SplitWithImage() {
               <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
             }>
             <Features
-              icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+             icon={<Image src={f9} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
               text={'Currency Conversion'}
             />
             <Features
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+                icon={<Image src={f10} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
               text={'Competitive Rates'}
             />
             <Features
-              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+               icon={<Image src={f8} alt="Seamless" w={5} h={5} />}
               iconBg={useColorModeValue('purple.100', 'purple.900')}
               text={'Real-time Transfers'}
             />
