@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import AuthLayout from './layouts/auth';
 import SignUp from './views/auth/signUp'
 import Password from './views/auth/password/password'
+import Verify from './views/auth/password/verification'
 import ResetPassword from './views/auth/password/reset'
 import AdminLayout from './layouts/admin';
 import Home from './layouts/landing/home';
@@ -43,6 +44,7 @@ ReactDOM.render(
 					<Route path={`/callback`} component={FailurePage} />
 					<Route path={`/forgot_password`}  component={Password}/>
 					<Route path={`/reset-password`}  component={ResetPassword}/>
+					<Route exact path={`/verifyAccount`}  component={Verify}/>
 					<Redirect from='/' to='/home' />
 				</Switch>
 				</BrowserRouter>

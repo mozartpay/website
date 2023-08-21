@@ -24,8 +24,8 @@ import illustration from "assets/img/auth/mozart.png";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
-
-
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 interface UserData {
     email: string;
     name: string;
@@ -43,38 +43,40 @@ function SignIn() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [fullname, setName] = useState<string>('');
-
+    const [number, setnumber] = React.useState('')
     const handleSignUp = async () => {
         try {
-          const response = await fetch('https://mozart-api-21ea5fd801a8.herokuapp.com/api/signup/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password, fullname }),
-          });
-      
-          if (response.ok) {
-            console.log('Signup Successful');
-            const responseData = await response.json();
-      
-            const userData: UserData = responseData.user;
-      
-            // Store user data in localStorage
-            localStorage.setItem('user', JSON.stringify(userData));
-      
-            // Redirect the user to /admin
-            window.location.href = '/admin/default';
-          } else {
-            const data = await response.json();
-            console.log('Signup Error:', data.message); // Display the error message sent from the server
-          }
-        } catch (error) {
-          console.error('Error during signup:', error);
-        }
-      };
-      
+            const response = await fetch('https://mozart-api-21ea5fd801a8.herokuapp.com/api/signup/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password, fullname, number }),
+            });
 
+            if (response.ok) {
+                console.log('Signup Successful');
+                const responseData = await response.json();
+
+                const userData: UserData = responseData.user;
+
+                // Store user data in localStorage
+                localStorage.setItem('user', JSON.stringify(userData));
+
+                // Redirect the user to /admin
+                window.location.href = '/verifyAccount';
+            } else {
+                const data = await response.json();
+                console.log('Signup Error:', data.message); // Display the error message sent from the server
+            }
+        } catch (error) {
+            console.error('Error during signup:', error);
+        }
+    };
+
+    const handleChange = (newValue: string) => {
+        setnumber(newValue)
+    }
 
 
     return (
@@ -115,7 +117,7 @@ function SignIn() {
                     me='auto'
                     mb={{ base: "20px", md: "auto" }}>
                     <FormControl>
-                    <FormLabel
+                        <FormLabel
                             display='flex'
                             ms='4px'
                             fontSize='sm'
@@ -177,7 +179,7 @@ function SignIn() {
                                 variant='auth'
                                 value={password}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-                          
+
                             />
                             <InputRightElement display='flex' alignItems='center' mt='4px'>
                                 <Icon
@@ -188,6 +190,11 @@ function SignIn() {
                                 />
                             </InputRightElement>
                         </InputGroup>
+                        <PhoneInput
+                            placeholder="Enter phone number"
+                            value={number}
+                            onChange={setnumber} />
+                            <br></br>
                         <Flex justifyContent='space-between' align='center' mb='24px'>
                             <FormControl display='flex' alignItems='center'>
                                 <Checkbox
