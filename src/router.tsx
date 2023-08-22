@@ -1,16 +1,16 @@
 import { Icon } from '@chakra-ui/react';
-import { MdBarChart, MdPerson, MdHome, MdLock, MdOutlineShoppingCart } from 'react-icons/md';
+import { MdBarChart, MdPerson, MdHome, MdLock, MdOutlineShoppingCart,MdAttachMoney,MdMoney } from 'react-icons/md';
 
 // Admin Imports
 import MainDashboard from 'views/admin/default';
 import NFTMarketplace from 'views/admin/marketplace';
 import Profile from 'views/admin/profile';
 import DataTables from 'views/admin/dataTables';
+import Money from 'views/admin/dataTables/money';
 import Airtm from 'views/admin/airtm';
 import RTL from 'views/admin/rtl';
 
 // Auth Imports
-import SignInCentered from 'views/auth/signIn';
 import Home from 'layouts/landing/home'
 const routes = [
 	{
@@ -25,7 +25,7 @@ const routes = [
 		name: 'Payment',
 		layout: '/admin',
 		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-		path: '/data-tables',
+		path: '/payment',
 		component: DataTables
 	},
 	{
@@ -48,6 +48,13 @@ const routes = [
 		path: '/landing',
 		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
 		component: Home
+	},
+	{
+		name: ' Send Money',
+		layout: '/admin',
+		path: '/sendMoney',
+		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
+		component: Money
 	}
 ];
 
