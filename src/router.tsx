@@ -7,6 +7,8 @@ import NFTMarketplace from 'views/admin/marketplace';
 import Profile from 'views/admin/profile';
 import DataTables from 'views/admin/dataTables';
 import Money from 'views/admin/dataTables/money';
+import Request from 'views/admin/dataTables/request';
+import Identity from 'views/admin/dataTables/identity';
 import Airtm from 'views/admin/airtm';
 import RTL from 'views/admin/rtl';
 
@@ -55,6 +57,20 @@ const routes = [
 		path: '/sendMoney',
 		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
 		component: Money
+	},
+	{
+		name: ' Request Money',
+		layout: '/admin',
+		path: '/requestMoney',
+		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
+		component: Request
+	},
+	{
+		name: ' Identity Verification',
+		layout: '/admin',
+		path: '/identity',
+		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+		component: Identity
 	}
 ];
 

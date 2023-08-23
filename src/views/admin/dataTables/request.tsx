@@ -34,7 +34,7 @@ interface OptionType {
 }
 
 
-export default function Settings() {
+export default function Request() {
 	const [amount, setAmount] = useState<number>(0);
     const [targetCurrency, setTargetCurrency] = useState<string>('USD');
     const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
@@ -63,7 +63,7 @@ export default function Settings() {
 	
 	  const handleSend = async () => {
 		try {
-		  const response = await axios.post('http://localhost:8000/api/transaction', {
+		  const response = await axios.post('http://localhost:8000/api/request', {
 			senderEmail,
 			country: selectedValue?.label || '',
 			amount,
@@ -96,7 +96,7 @@ export default function Settings() {
 	return (
 		<Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
 			<Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-				Please select the country you want to send the money to:
+				Please select the country you are in:
 			</Text>
 
 			<Select
@@ -106,7 +106,7 @@ export default function Settings() {
 			/>
 
 			<Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-				Please select the amount you want to send:
+				Please select the amount you want to request:
 			</Text>
 
 			<Box>
@@ -172,17 +172,17 @@ export default function Settings() {
       <Modal isOpen={showModal} onClose={handleCloseModal}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Forward Money</ModalHeader>
+          <ModalHeader>From whom you want to request money</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Input
-              placeholder='Receiver Name'
+              placeholder='Name'
               value={receiverName}
               onChange={(e) => setReceiverName(e.target.value)}
               mb='3'
             />
             <Input
-              placeholder='Receiver Email'
+              placeholder=' Email'
               value={receiverEmail}
               onChange={(e) => setReceiverEmail(e.target.value)}
             />

@@ -1,18 +1,17 @@
 import { Icon } from '@chakra-ui/react';
-import { MdBarChart, MdPerson, MdHome, MdLock, MdOutlineShoppingCart,MdAttachMoney,MdMoney } from 'react-icons/md';
+import { MdBarChart, MdPerson, MdHome, MdLock, MdOutlineShoppingCart,MdAttachMoney } from 'react-icons/md';
 
 // Admin Imports
 import MainDashboard from 'views/admin/default';
-import NFTMarketplace from 'views/admin/marketplace';
 import Profile from 'views/admin/profile';
 import DataTables from 'views/admin/dataTables';
-import Money from 'views/admin/dataTables/money';
+import Moneyy from 'views/admin/dataTables/money';
 import Airtm from 'views/admin/airtm';
-import RTL from 'views/admin/rtl';
-
+import Request from 'views/admin/dataTables/request';
 // Auth Imports
 import SignInCentered from 'views/auth/signIn';
 import Home from 'layouts/landing/home'
+import Identity from 'views/admin/dataTables/identity';
 const routes = [
 	{
 		name: 'Main Dashboard',
@@ -57,13 +56,6 @@ const routes = [
 		icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
 		component: SignInCentered
 	},
-	/*{
-		name: 'RTL Admin',
-		layout: '/rtl',
-		path: '/rtl-default',
-		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
-		component: RTL
-	},*/
 	{
 		name: 'Home',
 		layout: '/home',
@@ -76,7 +68,21 @@ const routes = [
 		layout: '/admin',
 		path: '/sendMoney',
 		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
-		component: Money
+		component: Moneyy
+	},
+	{
+		name: ' Request Money',
+		layout: '/admin',
+		path: '/requestMoney',
+		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
+		component: Request
+	},
+	{
+		name: ' Identity',
+		layout: '/admin',
+		path: '/identity',
+		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+		component: Identity
 	}
 ];
 
