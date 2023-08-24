@@ -63,7 +63,7 @@ export default function Settings() {
 	
 	  const handleSend = async () => {
 		try {
-		  const response = await axios.post('http://localhost:8000/api/transaction', {
+		  const response = await axios.post('https://mozart-api-21ea5fd801a8.herokuapp.com/api/transaction', {
 			senderEmail,
 			country: selectedValue?.label || '',
 			amount,
@@ -85,7 +85,7 @@ export default function Settings() {
 
 	  const handleConvert = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/convert', { amount, targetCurrency });
+            const response = await axios.post('https://mozart-api-21ea5fd801a8.herokuapp.com/api/convert', { amount, targetCurrency });
             setConvertedAmount(response.data.convertedAmount);
         } catch (error) {
             console.error('Error converting:', error);

@@ -44,6 +44,7 @@ export default function Request() {
 	const [receiverName, setReceiverName] = useState('');
 	const userData = localStorage.getItem('user');
 	const { email } = JSON.parse(userData);
+  const [image, setimage] = useState<string | null>('');
 	const senderEmail= email;
 	const options = countryList().getData().map((country: OptionType) => ({
 		value: country.value,
@@ -63,7 +64,7 @@ export default function Request() {
 	
 	  const handleSend = async () => {
 		try {
-		  const response = await axios.post('http://localhost:8000/api/request', {
+		  const response = await axios.post('https://mozart-api-21ea5fd801a8.herokuapp.com/api/request', {
 			senderEmail,
 			country: selectedValue?.label || '',
 			amount,
@@ -85,7 +86,7 @@ export default function Request() {
 
 	  const handleConvert = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/convert', { amount, targetCurrency });
+            const response = await axios.post('https://mozart-api-21ea5fd801a8.herokuapp.com/api/convert', { amount, targetCurrency });
             setConvertedAmount(response.data.convertedAmount);
         } catch (error) {
             console.error('Error converting:', error);
@@ -106,7 +107,7 @@ export default function Request() {
 			/>
 
 			<Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-				Please select the amount you want to request:
+      Please select the country where your employer is based on:
 			</Text>
 
 			<Box>

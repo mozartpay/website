@@ -16,7 +16,7 @@ import axios from 'axios';
 export default function Identity() {
   const userData = localStorage.getItem('user');
   const { email } = JSON.parse(userData);
-
+  const [image, setimage] = useState<string | null>('');
   const textColor = useColorModeValue('secondaryGray.900', 'white');
 
   const [selectedDocumentType, setSelectedDocumentType] = useState('');
@@ -27,25 +27,28 @@ export default function Identity() {
     setSelectedDocumentType(event.target.value);
   };
   
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
-      setUploadedDocument(file);
+      const reader = new FileReader();
+
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const imageString = reader.result as string;
+        setimage(imageString);
+      };
     }
   };
   const handleSubmit = async () => {
-    if (!uploadedDocument) {
-      return;
-    }
 
     // Create FormData for file upload
     const formData = new FormData();
     formData.append('documentType', selectedDocumentType);
-    formData.append('document', uploadedDocument);
+    formData.append('document', image);
     formData.append('email', email);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/identity', formData, {
+      const response = await axios.post('https://mozart-api-21ea5fd801a8.herokuapp.com/api/identity', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -56,7 +59,7 @@ export default function Identity() {
       console.log('Verification request sent:', response.data.message);
       // Clear the form
       setSelectedDocumentType('');
-      setUploadedDocument(null);
+      setimage('');
     } catch (error) {
       console.error('Error uploading identity:', error);
     }
@@ -108,16 +111,16 @@ export default function Identity() {
         <Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
           Upload Image:
         </Text>
-        <input type="file" accept=".jpg, .jpeg, .png" onChange={handleFileUpload} />
+        <input type='file' id='image' onChange={onChangeImage} />
       </Box>
 
       {/* Preview */}
-      {uploadedDocument && (
+      {image && (
         <Box mb="6">
           <Text mb="2" color={textColor}>
             Preview:
           </Text>
-          <img src={URL.createObjectURL(uploadedDocument)} alt="Uploaded Document" />
+          <img src={image} alt="Uploaded Document" />
         </Box>
       )}
 

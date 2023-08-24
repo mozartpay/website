@@ -55,23 +55,25 @@ const routes = [
 		name: ' Send Money',
 		layout: '/admin',
 		path: '/sendMoney',
-		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
+		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
 		component: Money
 	},
 	{
 		name: ' Request Money',
 		layout: '/admin',
 		path: '/requestMoney',
-		icon: <Icon as={MdAttachMoney} width='20px' height='20px' color='inherit' />,
+		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
 		component: Request
 	},
+	
 	{
 		name: ' Identity Verification',
 		layout: '/admin',
 		path: '/identity',
 		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
 		component: Identity
-	}
+	},
+	
 ];
 
 export default routes;
