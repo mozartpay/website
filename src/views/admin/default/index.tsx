@@ -8,7 +8,8 @@ import { MdAddTask, MdAttachMoney, MdBarChart, MdFileCopy } from 'react-icons/md
 import ComplexTable from 'views/admin/default/components/ComplexTable';
 import airtm from '../../../assets/img/dashboards/0x0.png'
 import ComplexTableOrder  from 'views/admin/default/components/ComplexTableOrder';
-
+import SendMoney  from 'views/admin/default/components/sendMoney';
+import RequestMoney  from 'views/admin/default/components/requestMoney';
 type RowObj = {
 	transaction: string;
 	amount: string;
@@ -90,6 +91,8 @@ export default function UserReports() {
 			<SimpleGrid >
 			<ComplexTable />
 			<ComplexTableOrder />
+			<SendMoney></SendMoney>
+			<RequestMoney/>
 				{/*<SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap='20px'>
 					<Tasks />
 					<MiniCalendar h='100%' minW='100%' selectRange={false} />

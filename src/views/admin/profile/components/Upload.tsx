@@ -1,10 +1,10 @@
-import { Box, Button, Flex, Icon, Text, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Button, Flex, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import Card from 'components/card/Card';
 import axios from 'axios';
 
 
-export default function Upload(props: { used?: number; total?: number; [x: string]: any }) {
+export default function Upload(props: { used?: number; total?: number;[x: string]: any }) {
   const { used, total, ...rest } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue('secondaryGray.900', 'white');
@@ -12,12 +12,12 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
   const [image, setimage] = useState<string | null>('');
   const [userName, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
-
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   useEffect(() => {
     const userData = localStorage.getItem('user');
     if (userData) {
-		console.log(userData)
-		
+      console.log(userData)
+
       const { name, email } = JSON.parse(userData);
       setName(name);
       setEmail(email);
@@ -40,6 +40,7 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
       if (response.ok) {
         const data = await response.json();
         console.log('User image updated:', data.user);
+        setShowSuccessAlert(true);
       } else {
         console.error('Error updating user image');
       }
@@ -62,19 +63,19 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
 
   return (
     <Card mb='20px' alignItems='center' p='20px'>
-          <Flex h='100%' direction={{ base: 'column', '2xl': 'row' }} alignItems='center'>
-          <Text
-            color={textColorPrimary}
-            fontWeight='bold'
-            textAlign='start'
-            fontSize='2xl'
-            mt={{ base: '20px', '2xl': '50px' }}>
-            Change your profile avatar :
-          </Text>
-        <div style={{ width: '100%', textAlign: 'center', marginBottom: '30px',  marginTop: '40px', marginLeft:'150px' }}>
+      <Flex h='100%' direction={{ base: 'column', '2xl': 'row' }} alignItems='center'>
+        <Text
+          color={textColorPrimary}
+          fontWeight='bold'
+          textAlign='start'
+          fontSize='2xl'
+          mt={{ base: '20px', '2xl': '50px' }}>
+          Change your profile avatar :
+        </Text>
+        <div style={{ width: '100%', textAlign: 'center', marginBottom: '30px', marginTop: '40px', marginLeft: '150px' }}>
           <input type='file' id='image' onChange={onChangeImage} />
         </div>
-        <Flex direction='column'  alignItems='center' >
+        <Flex direction='column' alignItems='center' >
           <Text
             color={textColorPrimary}
             fontWeight='bold'
@@ -83,7 +84,7 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
             mt={{ base: '20px', '2xl': '50px' }}>
             (PS: The image must not be too big!)
           </Text>
-          <Flex w='100%'  alignItems='center'>
+          <Flex w='100%' alignItems='center'>
             <Button
               me='100%'
               mb='50px'
@@ -95,9 +96,19 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
               onClick={handleUpdateButtonClick}>
               Update now!
             </Button>
+
+
           </Flex>
         </Flex>
       </Flex>
+      {showSuccessAlert && (
+        <Alert status="success" variant="subtle" flexDirection="column" alignItems="center" justifyContent="center" mt={4}>
+          <AlertIcon boxSize="40px" mr={0} />
+          <Text mt={2} fontSize="lg" textAlign="center">
+            Profile picture uploaded successfully!
+          </Text>
+        </Alert>
+      )}
     </Card>
   );
 }

@@ -3,6 +3,8 @@ import { Box, Text, SimpleGrid, useColorModeValue } from '@chakra-ui/react';
 import { Button, Flex, Icon, Image, Link, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import Card from 'components/card/Card';
 import Nft4 from 'assets/img/dashboards/0x0.png';
+import freighter from 'assets/img/dashboards/freighter.png';
+import circle from 'assets/img/dashboards/circle1.jpeg';
 import { Input } from '@chakra-ui/react'
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -15,21 +17,19 @@ export default function Settings() {
 		setAmount(event.target.value);
 	};
 	const userData = localStorage.getItem('user');
-	
-		
-		const { email } = JSON.parse(userData);
-		
+	const { email } = JSON.parse(userData);
+
 	const handlePayment = async () => {
 		try {
 			const response = await axios.post<{
 				[x: string]: any; data: any
 			}>('https://mozart-api-21ea5fd801a8.herokuapp.com/api/airtm/create-payment', {
 				amount: amount,
-				email:email,
+				email: email,
 
 			});
 			const id = response.data.data.id;
-			console.log('id',id)
+			console.log('id', id)
 			console.log('Payment created successfully:', response.data);
 			//history.push(`https://payments.static-stg.tests.airtm.org/checkout/${id}`);
 			window.location.href = `https://payments.static-stg.tests.airtm.org/checkout/${id}`;
@@ -38,6 +38,28 @@ export default function Settings() {
 		}
 	};
 
+	const handleFreighterPayment = async () => {
+		try {
+			const response = await fetch("http://localhost:8000/api/freighter/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email, amount }), // Send email and amount
+			});
+
+			if (response.ok) {
+				const data = await response.json();
+				const { signedTransaction } = data;
+				console.log('signedTransaction',signedTransaction)
+			} else {
+				const errorData = await response.json();
+				console.error("Payment error:", errorData.error);
+			}
+		} catch (error) {
+			console.error("Error handling payment:", error);
+		}
+	};
 
 	const textColor = useColorModeValue('secondaryGray.900', 'white');
 	return (
@@ -138,6 +160,170 @@ export default function Settings() {
 									px='24px'
 									py='5px'
 									onClick={handlePayment}>
+									Choose
+								</Button>
+							</Flex>
+						</Flex>
+					</Flex>
+				</Card>
+				<Card p='20px'>
+					<Flex direction={{ base: 'column' }} justify='center'>
+						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
+							<Image
+								src={circle}
+								w={{ base: '100%', '3xl': '100%' }}
+								h={{ base: '100%', '3xl': '100%' }}
+								borderRadius='20px'
+							/>
+						</Box>
+						<Flex flexDirection='column' justify='space-between' h='100%'>
+							<Flex
+								justify='space-between'
+								direction={{
+									base: 'row',
+									md: 'column',
+									lg: 'row',
+									xl: 'column',
+									'2xl': 'row'
+								}}
+								mb='auto'>
+								<Flex direction='column'>
+									<Text
+										color={textColor}
+										fontSize={{
+											base: 'xl',
+											md: 'lg',
+											lg: 'lg',
+											xl: 'lg',
+											'2xl': 'md',
+											'3xl': 'lg'
+										}}
+										mb='5px'
+										fontWeight='bold'
+										me='14px'>
+										CIRCLE
+									</Text>
+									<Text
+										color='secondaryGray.600'
+										fontSize={{
+											base: 'sm'
+										}}
+										fontWeight='400'
+										me='14px'>
+										Global payments made easy!
+									</Text>
+								</Flex>
+
+							</Flex>
+							<Flex
+								align={{
+									base: 'center',
+									md: 'start',
+									lg: 'center',
+									xl: 'start',
+									'2xl': 'center'
+								}}
+								justify='space-between'
+								direction={{
+									base: 'row',
+									md: 'column',
+									lg: 'row',
+									xl: 'column',
+									'2xl': 'row'
+								}}
+								mt='25px'>
+
+								<Button
+									variant='darkBrand'
+									color='white'
+									fontSize='sm'
+									fontWeight='500'
+									borderRadius='70px'
+									px='24px'
+									py='5px'
+									onClick={handlePayment}>
+									Choose
+								</Button>
+							</Flex>
+						</Flex>
+					</Flex>
+				</Card>
+				<Card p='20px'>
+					<Flex direction={{ base: 'column' }} justify='center'>
+						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
+							<Image
+								src={freighter}
+								w={{ base: '100%', '3xl': '100%' }}
+								h={{ base: '100%', '3xl': '100%' }}
+								borderRadius='20px'
+							/>
+						</Box>
+						<Flex flexDirection='column' justify='space-between' h='100%'>
+							<Flex
+								justify='space-between'
+								direction={{
+									base: 'row',
+									md: 'column',
+									lg: 'row',
+									xl: 'column',
+									'2xl': 'row'
+								}}
+								mb='auto'>
+								<Flex direction='column'>
+									<Text
+										color={textColor}
+										fontSize={{
+											base: 'xl',
+											md: 'lg',
+											lg: 'lg',
+											xl: 'lg',
+											'2xl': 'md',
+											'3xl': 'lg'
+										}}
+										mb='5px'
+										fontWeight='bold'
+										me='14px'>
+										Freighter
+									</Text>
+									<Text
+										color='secondaryGray.600'
+										fontSize={{
+											base: 'sm'
+										}}
+										fontWeight='400'
+										me='14px'>
+										A Stellar wallet for every website!
+									</Text>
+								</Flex>
+
+							</Flex>
+							<Flex
+								align={{
+									base: 'center',
+									md: 'start',
+									lg: 'center',
+									xl: 'start',
+									'2xl': 'center'
+								}}
+								justify='space-between'
+								direction={{
+									base: 'row',
+									md: 'column',
+									lg: 'row',
+									xl: 'column',
+									'2xl': 'row'
+								}}
+								mt='25px'>
+
+								<Button
+									variant='darkBrand'
+									color='white'
+									fontSize='sm'
+									fontWeight='500'
+									borderRadius='70px'
+									px='24px'
+									py='5px'
+									onClick={handleFreighterPayment}>
 									Choose
 								</Button>
 							</Flex>
