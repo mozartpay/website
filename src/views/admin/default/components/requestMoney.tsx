@@ -183,7 +183,7 @@ export default function ComplexTableOrder() {
 	return (
 		<Box>
 			<Text color={textColor} fontSize='22px' fontWeight='700' lineHeight='100%'>
-				Send Money Transactions
+				Request Money Transactions
 			</Text>
 			<Table variant='simple' color='gray.500' mb='24px' mt='12px'>
 				<Thead>
