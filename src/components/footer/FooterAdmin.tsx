@@ -30,7 +30,7 @@ export default function Footer() {
 				<Text as='span' fontWeight='500' ms='4px'>
 					Mozart. All Rights Reserved. Made with love by
 					<Link mx='3px' color={textColor} href='https://www.ogtechnologies.co/' target='_blank' fontWeight='700'>
-						OG technologies !
+						OG technologies EU!
 					</Link>
 				</Text>
 			</Text>
