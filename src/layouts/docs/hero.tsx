@@ -11,7 +11,7 @@ import {
     createIcon,
 } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
-export default function CallToActionWithAnnotation() {
+export default function HeroDocs() {
     return (
         <>
             <Container maxW={'3xl'}>

@@ -9,11 +9,12 @@ import DataTables from 'views/admin/dataTables';
 import Money from 'views/admin/dataTables/money';
 import Request from 'views/admin/dataTables/request';
 import Identity from 'views/admin/dataTables/identity';
+import OAs from 'views/admin/dataTables/oas';
 import Airtm from 'views/admin/airtm';
+import AirtmBlog from 'layouts/airtm/home';
 import RTL from 'views/admin/rtl';
-
-// Auth Imports
 import Home from 'layouts/landing/home'
+
 const routes = [
 	{
 		name: 'Main Dashboard',
@@ -72,6 +73,20 @@ const routes = [
 		path: '/identity',
 		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
 		component: Identity
+	},
+	{
+		name: ' OAs',
+		layout: '/admin',
+		path: '/oas',
+		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+		component: OAs
+	},
+	{
+		name: ' AirtmBlog',
+		layout: '/admin',
+		path: '/blogs/airtm-integration',
+		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+		component: AirtmBlog
 	},
 	
 ];

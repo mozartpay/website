@@ -114,25 +114,25 @@ export default function Footer() {
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
             <Box as="a" href={'/contactUs'}>
-              Contact us
+              Contact Us
             </Box>
             <Box as="a" href={'/blogs'}>
               Blog
             </Box>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'#'}>
               Testimonials
-            </Box>
+            </Box> */}
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Support</ListHeader>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'/help'}>
               Help Center
-            </Box>
+            </Box> */}
             <Box as="a" href={'/terms'}>
               Terms of Service
             </Box>
             <Box as="a" href={'/imprint'}>
-              Legal
+              Imprint
             </Box>
             <Box as="a" href={'/privacy'}>
               Privacy Policy

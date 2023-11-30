@@ -53,7 +53,7 @@ const BlogAuthor = (props: BlogAuthorProps) => {
       <Image
         borderRadius="full"
         boxSize="40px"
-        src="https://100k-faces.glitch.me/random-image"
+        src="https://i.imgur.com/pxwIAOW.png"
         alt={`Avatar of ${props.name}`}
       />
       <Text fontWeight="medium">{props.name}</Text>
@@ -115,7 +115,7 @@ const ArticleList = () => {
           <BlogTags tags={['Engineering', 'Product']} />
           <Heading marginTop="1">
             <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              Blog title
+Welcome to our Blog
             </Text>
           </Heading>
           <Text
@@ -123,21 +123,18 @@ const ArticleList = () => {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book.
+            At MozartPay, we're passionate about revolutionizing the way the world interacts with finance. Our blog is a dedicated space where we explore the latest trends, innovations, and insights in the realm of digital payments and Web3 technologies. Whether you're a seasoned finance professional, a tech enthusiast, or just curious about the future of payments, our blog serves as your gateway to understanding and leveraging the most advanced financial tools and strategies.
           </Text>
-          <BlogAuthor name="Sarah Jedlaoui" date={new Date('2021-04-06T19:01:27Z')} />
+          <BlogAuthor name="MozartPay Team" date={new Date('2023-11-06T19:01:27Z')} />
         </Box>
       </Box>
-      <Heading as="h2" marginTop="5">
+      {/* <Heading as="h2" marginTop="5">
         Articles
-      </Heading>
+      </Heading> */}
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
+          {/* <Box w="100%">
             <Box borderRadius="lg" overflow="hidden">
               <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 <Image
@@ -168,7 +165,7 @@ const ArticleList = () => {
               make a type specimen book.
             </Text>
             <BlogAuthor name="Sarah Jedlaoui" date={new Date('2021-04-06T19:01:27Z')} />
-          </Box>
+          </Box> */}
         </WrapItem>
       </Wrap>
     

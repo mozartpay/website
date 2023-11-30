@@ -21,7 +21,10 @@ import RejectPage from './layouts/transaction/rejected'
 import FailurePage from './layouts/transaction/failed'
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme/theme';
-import Airtm from 'views/admin/airtm';
+// import Airtm from 'views/admin/airtm';
+import AirtmBlog from 'layouts/airtm/hero';
+import OAs from "./layouts/oas/home"
+
 ReactDOM.render(
 	<ChakraProvider theme={theme}>
 		<React.StrictMode>
@@ -29,7 +32,8 @@ ReactDOM.render(
 				<Switch>
 					<Route path={`/auth`} component={AuthLayout} />
 					<Route path={`/admin`} component={AdminLayout} />
-					<Route path={`/airtm`} component={Airtm} />
+					{/* <Route path={`/airtm`} component={Airtm} /> */}
+					{/* <Route path={`/airtm`} component={Airtm} /> */}
 					<Route path={`/rtl`} component={RTLLayout} />
 					<Route path={`/home`} component={Home} />
 					<Route path={`/terms`} component={Terms} />
@@ -37,7 +41,8 @@ ReactDOM.render(
 					<Route path={`/docs`} component={Docs} />
 					<Route path={`/contactUs`} component={Contact} />
 					<Route path={`/privacy`} component={Privacy} />
-					<Route path={`/blogs`} component={Blogs} />
+					<Route exact path={`/blogs`} component={Blogs} />
+					<Route path={`/blogs/airtm-integration`} component={AirtmBlog} />
 					<Route path={`/signup`} component={SignUp} />
 					<Route path={`/confirm`} component={SuccessPage} />
 					<Route path={`/cancel`} component={RejectPage} />
@@ -45,6 +50,7 @@ ReactDOM.render(
 					<Route path={`/forgot_password`}  component={Password}/>
 					<Route path={`/reset-password`}  component={ResetPassword}/>
 					<Route exact path={`/verifyAccount`}  component={Verify}/>
+					<Route path={`/oas`}  component={OAs}/>
 					<Redirect from='/' to='/home' />
 				</Switch>
 				</BrowserRouter>
