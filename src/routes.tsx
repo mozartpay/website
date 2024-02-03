@@ -13,7 +13,7 @@ import SignInCentered from 'views/auth/signIn';
 import Home from 'layouts/landing/home'
 import Identity from 'views/admin/dataTables/identity';
 import OAs from 'views/admin/dataTables/oas';
-import AirtmBlog from 'layouts/airtm/home';
+import AirtmBlog from 'layouts/airtmBlog/home';
 
 const routes = [
 	{

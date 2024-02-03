@@ -22,8 +22,9 @@ import FailurePage from './layouts/transaction/failed'
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme/theme';
 // import Airtm from 'views/admin/airtm';
-import AirtmBlog from 'layouts/airtm/hero';
-import OAs from "./layouts/oas/home"
+import AirtmBlog from 'layouts/airtmBlog/hero';
+import IntroMozartPay from 'layouts/introMozartBlog/hero';
+// import OAs from "./layouts/oas/home"
 
 ReactDOM.render(
 	<ChakraProvider theme={theme}>
@@ -43,6 +44,7 @@ ReactDOM.render(
 					<Route path={`/privacy`} component={Privacy} />
 					<Route exact path={`/blogs`} component={Blogs} />
 					<Route path={`/blogs/airtm-integration`} component={AirtmBlog} />
+					<Route path={`/blogs/introducing-mozartpay`} component={IntroMozartPay} />
 					<Route path={`/signup`} component={SignUp} />
 					<Route path={`/confirm`} component={SuccessPage} />
 					<Route path={`/cancel`} component={RejectPage} />
@@ -50,7 +52,7 @@ ReactDOM.render(
 					<Route path={`/forgot_password`}  component={Password}/>
 					<Route path={`/reset-password`}  component={ResetPassword}/>
 					<Route exact path={`/verifyAccount`}  component={Verify}/>
-					<Route path={`/oas`}  component={OAs}/>
+					{/* <Route path={`/oas`}  component={OAs}/> */}
 					<Redirect from='/' to='/home' />
 				</Switch>
 				</BrowserRouter>

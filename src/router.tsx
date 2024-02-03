@@ -11,7 +11,7 @@ import Request from 'views/admin/dataTables/request';
 import Identity from 'views/admin/dataTables/identity';
 import OAs from 'views/admin/dataTables/oas';
 import Airtm from 'views/admin/airtm';
-import AirtmBlog from 'layouts/airtm/home';
+import AirtmBlog from 'layouts/airtmBlog/home';
 import RTL from 'views/admin/rtl';
 import Home from 'layouts/landing/home'
 

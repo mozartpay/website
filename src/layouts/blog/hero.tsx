@@ -30,6 +30,7 @@ const BlogTags = (props: Props) => {
   const { marginTop = 0, tags } = props
 
   return (
+    
     <HStack spacing={2} marginTop={marginTop}>
       {tags.map((tag) => {
         return (
@@ -134,9 +135,11 @@ const ArticleList = () => {
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+
           <Box w="100%">
             <Box borderRadius="lg" overflow="hidden">
               <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <a href="/blogs/introducing-mozartpay" target="_blank" rel="noopener noreferrer">
                 <Image
                   transform="scale(1.0)"
                   src={
@@ -150,6 +153,7 @@ const ArticleList = () => {
                     transform: 'scale(1.05)',
                   }}
                 />
+                </a>
               </Box>
             </Box>
             <BlogTags tags={['Engineering', 'Product']} marginTop={3} />
