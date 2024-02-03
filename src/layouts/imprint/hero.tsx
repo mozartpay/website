@@ -34,7 +34,7 @@ export default function CallToActionWithAnnotation() {
                         <br></br>
                         E-mail: olvisgil@mozartpay.com
                         <br></br>
-                        Phone: +436604426691
+
                         <br></br>
                         Address: Liechtensteinstraße 111-115
                         <br></br>

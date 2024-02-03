@@ -10,16 +10,16 @@ import {
   Tag,
   Wrap,
   WrapItem,
-  SpaceProps,
+  // SpaceProps,
   useColorModeValue,
   Container,
-  VStack,
+  // VStack,
 } from '@chakra-ui/react'
 
-interface IBlogTags {
-  tags: Array<string>
-  marginTop?: SpaceProps['marginTop']
-}
+// interface IBlogTags {
+//   tags: Array<string>
+//   marginTop?: SpaceProps['marginTop']
+// }
 
 interface Props {
   marginTop?: number
@@ -53,7 +53,7 @@ const BlogAuthor = (props: BlogAuthorProps) => {
       <Image
         borderRadius="full"
         boxSize="40px"
-        src="https://100k-faces.glitch.me/random-image"
+        src="https://pbs.twimg.com/profile_images/1346878845622890506/GPNnoIeT_400x400.jpg"
         alt={`Avatar of ${props.name}`}
       />
       <Text fontWeight="medium">{props.name}</Text>
@@ -115,7 +115,7 @@ const ArticleList = () => {
           <BlogTags tags={['Engineering', 'Product']} />
           <Heading marginTop="1">
             <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              Blog title
+            Welcome to our Blog
             </Text>
           </Heading>
           <Text
@@ -123,12 +123,9 @@ const ArticleList = () => {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book.
+            At MozartPay, we're passionate about revolutionizing the way the world interacts with finance. Our blog is a dedicated space where we explore the latest trends, innovations, and insights in the realm of digital payments and Web3 technologies. Whether you're a seasoned finance professional, a tech enthusiast, or just curious about the future of payments, our blog serves as your gateway to understanding and leveraging the most advanced financial tools and strategies.
           </Text>
-          <BlogAuthor name="Sarah Jedlaoui" date={new Date('2021-04-06T19:01:27Z')} />
+          <BlogAuthor name="Mozart Team" date={new Date('06/11/2023')} />
         </Box>
       </Box>
       <Heading as="h2" marginTop="5">
@@ -143,7 +140,7 @@ const ArticleList = () => {
                 <Image
                   transform="scale(1.0)"
                   src={
-                    'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                    'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   }
                   alt="some text"
                   objectFit="contain"
@@ -158,16 +155,13 @@ const ArticleList = () => {
             <BlogTags tags={['Engineering', 'Product']} marginTop={3} />
             <Heading fontSize="xl" marginTop="2">
               <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                Article title
+              Introducing MozartPay: Your Symphony of Seamless Payments
               </Text>
             </Heading>
             <Text as="p" fontSize="md" marginTop="2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled it to
-              make a type specimen book.
+            Discover MozartPay – the conductor of seamless payments! Join our closed beta at mozartpay.com and experience a symphony of features designed to harmonize your day-to-day transactions. From seamless checkout experiences to advanced compliance, MozartPay is your key to unlocking the new era of payments. Join the revolution today!
             </Text>
-            <BlogAuthor name="Sarah Jedlaoui" date={new Date('2021-04-06T19:01:27Z')} />
+            <BlogAuthor name="Mozart Team" date={new Date('2021-04-06T19:01:27Z')} />
           </Box>
         </WrapItem>
       </Wrap>

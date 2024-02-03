@@ -166,7 +166,7 @@ export default function Settings() {
 						</Flex>
 					</Flex>
 				</Card>
-				<Card p='20px'>
+				{/* <Card p='20px'>
 					<Flex direction={{ base: 'column' }} justify='center'>
 						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
 							<Image
@@ -247,7 +247,7 @@ export default function Settings() {
 							</Flex>
 						</Flex>
 					</Flex>
-				</Card>
+				</Card> */}
 				<Card p='20px'>
 					<Flex direction={{ base: 'column' }} justify='center'>
 						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>

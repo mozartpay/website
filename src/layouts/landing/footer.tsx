@@ -15,7 +15,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 import logo from '../../assets/img/home/mozart.png'
 
@@ -103,12 +103,12 @@ export default function Footer() {
               <SocialButton label={'Twitter'} href={'https://twitter.com/Mozartpay'}>
                 <FaTwitter />
               </SocialButton>
-             {/**<SocialButton label={'YouTube'} href={'#'}>
-                <FaYoutube />
+              <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/company/mozartpay'}>
+                <FaLinkedin />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
+             {/* <SocialButton label={'Instagram'} href={'#'}>
                 <FaInstagram />
-              </SocialButton> */} 
+              </SocialButton> */}
             </Stack>
           </Stack>
           <Stack align={'flex-start'}>
@@ -119,20 +119,20 @@ export default function Footer() {
             <Box as="a" href={'/blogs'}>
               Blog
             </Box>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'#'}>
               Testimonials
-            </Box>
+            </Box> */}
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Support</ListHeader>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'#'}>
               Help Center
-            </Box>
+            </Box> */}
             <Box as="a" href={'/terms'}>
               Terms of Service
             </Box>
             <Box as="a" href={'/imprint'}>
-              Legal
+              Imprint
             </Box>
             <Box as="a" href={'/privacy'}>
               Privacy Policy
