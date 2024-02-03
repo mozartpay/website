@@ -9,11 +9,11 @@ import { Box, useColorModeValue } from '@chakra-ui/react';
 import { SidebarContext } from 'contexts/SidebarContext';
 
 // Custom Chakra theme
-export default function Index() {
+export default function Terms() {
 	// states and functions
 	const [ toggleSidebar, setToggleSidebar ] = useState(false); 
 	const getRoute = () => {
-		return window.location.pathname !== '/imprint';
+		return window.location.pathname !== '/contactUs';
 	};
 	const getRoutes = (
 		routes: RoutesType[]
@@ -23,7 +23,7 @@ export default function Index() {
 				route: RoutesType,
 				key: any
 			) => {
-				if (route.layout === '/imprint') {
+				if (route.layout === '/contactUs') {
 					return <Route path={route.layout + route.path} component={route.component} key={key} />;
 				} else {
 					return null;
@@ -55,7 +55,7 @@ export default function Index() {
 						<Box mx='auto' minH='100vh'>
 							<Switch>
 								{getRoutes(routes)}
-								<Redirect from='/imprint' to='/imprint
+								<Redirect from='/contactUs' to='/contactUs
                   ' />
 							</Switch>
 						</Box>

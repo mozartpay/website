@@ -128,9 +128,9 @@ const ArticleList = () => {
           <BlogAuthor name="Mozart Team" date={new Date('06/11/2023')} />
         </Box>
       </Box>
-      <Heading as="h2" marginTop="5">
+      {/* <Heading as="h2" marginTop="5">
         Articles
-      </Heading>
+      </Heading> */}
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>

@@ -17,16 +17,15 @@ import {
 } from '@chakra-ui/react'
 import Nav from '../landing/nav'
 import Footer from '../landing/footer'
-import Hero from './hero'
-
-export default function HomeDocs() {
+import Hero from '../blog/hero'
+export default function Terms() {
   return (
     <Container maxW={'8xl'}>
         <Nav></Nav>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 20, md: 10 }}
         direction={{ base: 'column', md: 'row' }}>
        
        <Hero></Hero>

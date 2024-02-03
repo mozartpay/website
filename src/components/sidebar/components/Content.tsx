@@ -14,7 +14,7 @@ function SidebarContent(props: { routes: RoutesType[] }) {
 		<Flex direction='column' height='100%' pt='25px' borderRadius='30px'>
 
 			<Center w='300px' >
-				<Heading color='black' fontSize='36px' mb='10px'>
+				<Heading fontSize='36px' mb='10px'>
 					Mozart
 				</Heading>
 			</Center>

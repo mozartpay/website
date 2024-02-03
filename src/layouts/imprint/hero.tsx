@@ -4,14 +4,11 @@ import {
     Heading,
     Container,
     Text,
-    Button,
     Stack,
-    Icon,
-    useColorModeValue,
     createIcon,
 } from '@chakra-ui/react'
 
-export default function CallToActionWithAnnotation() {
+export default function Imprint() {
     return (
         <>
             <Container maxW={'3xl'}>

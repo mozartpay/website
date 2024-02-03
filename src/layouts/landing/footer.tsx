@@ -114,7 +114,7 @@ export default function Footer() {
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
             <Box as="a" href={'/contactUs'}>
-              Contact us
+              Contact Us
             </Box>
             <Box as="a" href={'/blogs'}>
               Blog

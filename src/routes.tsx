@@ -12,6 +12,9 @@ import Request from 'views/admin/dataTables/request';
 import SignInCentered from 'views/auth/signIn';
 import Home from 'layouts/landing/home'
 import Identity from 'views/admin/dataTables/identity';
+import OAs from 'views/admin/dataTables/oas';
+import AirtmBlog from 'layouts/airtm/home';
+
 const routes = [
 	{
 		name: 'Main Dashboard',
@@ -83,7 +86,21 @@ const routes = [
 		path: '/identity',
 		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
 		component: Identity
-	}
+	},
+	{
+		name: ' OAs',
+		layout: '/admin',
+		path: '/oas',
+		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+		component: OAs
+	},
+	{
+		name: ' AirtmBlog',
+		layout: '/admin',
+		path: '/blogs/airtm-integration',
+		icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+		component: AirtmBlog
+	},
 ];
 
 export default routes;

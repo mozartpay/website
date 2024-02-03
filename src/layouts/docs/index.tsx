@@ -9,7 +9,7 @@ import { Box, useColorModeValue } from '@chakra-ui/react';
 import { SidebarContext } from 'contexts/SidebarContext';
 
 // Custom Chakra theme
-export default function Terms() {
+export default function index() {
 	// states and functions
 	const [ toggleSidebar, setToggleSidebar ] = useState(false); 
 	const getRoute = () => {

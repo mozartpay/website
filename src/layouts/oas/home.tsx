@@ -19,7 +19,7 @@ import Nav from '../landing/nav'
 import Footer from '../landing/footer'
 import Hero from './hero'
 
-export default function HomeDocs() {
+export default function Home() {
   return (
     <Container maxW={'8xl'}>
         <Nav></Nav>
