@@ -21,7 +21,7 @@ import Hero from './hero'
 export default function Terms() {
   return (
     <Container maxW={'8xl'}>
-        <Nav></Nav>
+       <Nav></Nav>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}

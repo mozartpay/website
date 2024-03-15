@@ -113,7 +113,7 @@ const ArticleList = () => {
           flexDirection="column"
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }}>
-          <BlogTags tags={['Engineering', 'Product']} />
+          <BlogTags tags={['Digital Payments', 'Finance Innovation']} />
           <Heading marginTop="1">
             <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
             Welcome to our Blog
@@ -143,6 +143,42 @@ const ArticleList = () => {
                 <Image
                   transform="scale(1.0)"
                   src={
+                    'https://i.imgur.com/pxwIAOW.png'
+                  }
+                  alt="some text"
+                  objectFit="contain"
+                  width="100%"
+                  transition="0.3s ease-in-out"
+                  _hover={{
+                    transform: 'scale(1.05)',
+                  }}
+                />
+                </a>
+              </Box>
+              
+            </Box>
+            <BlogTags tags={['Introduction', 'Payments']} marginTop={3} />
+            <Heading fontSize="xl" marginTop="2">
+              <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              Introducing MozartPay: Your Symphony of Seamless Payments
+              </Text>
+            </Heading>
+            <Text as="p" fontSize="md" marginTop="2">
+            Discover MozartPay – the conductor of seamless payments! Join our closed beta at mozartpay.com and experience a symphony of features designed to harmonize your day-to-day transactions. From seamless checkout experiences to advanced compliance, MozartPay is your key to unlocking the new era of payments. Join the revolution today!
+            </Text>
+            <BlogAuthor name="Mozart Team" date={new Date('2023-12-06T19:01:27Z')} />
+          </Box>
+          
+        </WrapItem>
+        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+
+          <Box w="100%">
+            <Box borderRadius="lg" overflow="hidden">
+              <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <a href="/blogs/orchestrated-agreements" target="_blank" rel="noopener noreferrer">
+                <Image
+                  transform="scale(1.0)"
+                  src={
                     'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                   }
                   alt="some text"
@@ -155,18 +191,20 @@ const ArticleList = () => {
                 />
                 </a>
               </Box>
+              
             </Box>
-            <BlogTags tags={['Engineering', 'Product']} marginTop={3} />
+            <BlogTags tags={['Financial Protocol', 'Web3 Payments']} marginTop={3} />
             <Heading fontSize="xl" marginTop="2">
               <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              Introducing MozartPay: Your Symphony of Seamless Payments
+              Harnessing Real-World Assets (RWAs) through Orchestrated Agreements (OAs): Web3 Payment Dynamics on Soroban
               </Text>
             </Heading>
             <Text as="p" fontSize="md" marginTop="2">
-            Discover MozartPay – the conductor of seamless payments! Join our closed beta at mozartpay.com and experience a symphony of features designed to harmonize your day-to-day transactions. From seamless checkout experiences to advanced compliance, MozartPay is your key to unlocking the new era of payments. Join the revolution today!
+            Discover smart contract-managed payments to streamline global transactions for businesses with secure, automated agreement execution.
             </Text>
-            <BlogAuthor name="Mozart Team" date={new Date('2021-04-06T19:01:27Z')} />
+            <BlogAuthor name="Mozart Team" date={new Date('2024-02-04T19:01:27Z')} />
           </Box>
+          
         </WrapItem>
       </Wrap>
     

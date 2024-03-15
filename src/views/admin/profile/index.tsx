@@ -52,9 +52,9 @@ export default function Overview() {
 					avatar={userImage || avatar} 
 					name={userName}
 					job={userEmail}
-					posts='17'
-					followers='9.7k'
-					following='274'
+					posts='0'
+					followers='0'
+					following='0'
 				/>
 				
 				<Upload
@@ -80,7 +80,7 @@ export default function Overview() {
 					'2xl': '1fr'
 				}}
 				gap={{ base: '20px', xl: '20px' }}>
-				<Projects
+				{/* <Projects
 					banner={banner}
 					avatar={avatar}
 					name='Adela Parkson'
@@ -88,8 +88,8 @@ export default function Overview() {
 					posts='17'
 					followers='9.7k'
 					following='274'
-				/>
-				<General gridArea={{ base: '2 / 1 / 3 / 2', lg: '1 / 2 / 2 / 3' }} minH='365px' pe='20px' />
+				/> */}
+				{/* <General gridArea={{ base: '2 / 1 / 3 / 2', lg: '1 / 2 / 2 / 3' }} minH='365px' pe='20px' /> */}
 				<Notifications
 					used={25.6}
 					total={50}

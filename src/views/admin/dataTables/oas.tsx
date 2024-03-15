@@ -75,41 +75,43 @@ export default function Identity() {
       </Heading>
 
       <Text mb="10" color={textColor}>
-        Your security is our top priority. To ensure a safe and secure environment, we need to
-        verify your identity before granting access to our services.
+      Effortlessly manage your Orchestraded Agreements. Get instant access to vital information, sign agreements seamlessly, update terms with ease, and cancel agreements when needed. 
       </Text>
       <Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
 				Instructions:
 			</Text>
       {/* Document Selection */}
       <Text mb="4" color={textColor}>
-        Please ensure that the document you upload is clear and legible.
+      <b>Get Agreement:</b> To view an existing agreement, bavigate to the "Select Action" section then click on "Get Agreement", and then upload the contract id or transaction XDR to see its details.        
+      <br />
+        <b>Sign Agreement:</b>  To sign an agreement, navigate to the "Select Action" section then click on "Sign Agreement", and then upload the contract id or transaction XDR to sign it.     
         <br />
-        The document should be valid and not expired.
+       <b>Update Agreement:</b>  To update an existing agreement, navigate to the "Select Action" section then click on "Update Agreement", and then upload the contract id or transaction XDR to sign the agreement update.   
         <br />
-        Make sure all four corners of the document are visible in the uploaded image.
-      </Text>
+        <b>Cancel Agreement:</b> To cancel an existing agreement, navigate to the "Select Action" section then click on "Cancel Agreement", and then upload the contract id or transaction XDR to sign the agreement cancelation.   
+        
+        </Text>
 
       <Box mb="6">
         <Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-          Document Selection:
+          Select the corresponding action:
         </Text>
         <ChakraSelect
           value={selectedDocumentType}
           onChange={handleDocumentTypeChange}
-          placeholder="Select Document Type"
+          placeholder="Select Action"
         >
-          <option value="passport">Passport</option>
-          <option value="drivingLicense">Driving License</option>
-          <option value="residentPermit">Resident Permit</option>
-          <option value="nationalIDCard">National ID Card</option>
+          <option value="getAgreements">Get Agreement Information</option>
+          <option value="drivingLicense">Sign Agreement</option>
+          <option value="residentPermit">Update Agreement</option>
+          <option value="nationalIDCard">Cancel Agreement</option>
         </ChakraSelect>
       </Box>
 
       {/* Upload Section */}
       <Box mb="6">
         <Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-          Upload Image:
+          Upload Contract ID or Transaction XDR in a TXT file:
         </Text>
         <input type='file' id='image' onChange={onChangeImage} />
       </Box>
@@ -120,14 +122,14 @@ export default function Identity() {
           <Text mb="2" color={textColor}>
             Preview:
           </Text>
-          <img src={image} alt="Uploaded Document" />
+          <img src={image} alt="Uploaded file" />
         </Box>
       )}
 
       {/* Buttons */}
       <Flex justifyContent="space-between">
         <Button variant="darkBrand" color="white" onClick={handleSubmit}>
-          Submit
+          Next
         </Button>
         <Button variant="darkBrand" color="white" onClick={handleButtonClick}>
           Cancel

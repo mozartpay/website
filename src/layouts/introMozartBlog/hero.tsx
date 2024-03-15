@@ -10,7 +10,7 @@ import {
   Tag,
   Wrap,
   WrapItem,
-  SpaceProps,
+  // SpaceProps,
   useColorModeValue,
   Container,
   // VStack,
@@ -44,26 +44,26 @@ const BlogTags = (props: Props) => {
   )
 }
 
-interface BlogAuthorProps {
-  date: Date
-  name: string
-}
+// interface BlogAuthorProps {
+//   date: Date
+//   name: string
+// }
 
-const BlogAuthor = (props: BlogAuthorProps) => {
-  return (
-    <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-      <Image
-        borderRadius="full"
-        boxSize="40px"
-        src="https://i.imgur.com/pxwIAOW.png"
-        alt={`Avatar of ${props.name}`}
-      />
-      <Text fontWeight="medium">{props.name}</Text>
-      <Text>—</Text>
-      <Text>{props.date.toLocaleDateString()}</Text>
-    </HStack>
-  )
-}
+// const BlogAuthor = (props: BlogAuthorProps) => {
+//   return (
+//     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
+//       <Image
+//         borderRadius="full"
+//         boxSize="40px"
+//         src="https://i.imgur.com/pxwIAOW.png"
+//         alt={`Avatar of ${props.name}`}
+//       />
+//       <Text fontWeight="medium">{props.name}</Text>
+//       <Text>—</Text>
+//       <Text>{props.date.toLocaleDateString()}</Text>
+//     </HStack>
+//   )
+// }
 
 const ArticleList = () => {
   return (
@@ -85,7 +85,7 @@ const ArticleList = () => {
               <Image
                 borderRadius="lg"
                 src={
-                  'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  'https://i.imgur.com/pxwIAOW.png'
                 }
                 alt="some good alt text"
                 objectFit="contain"

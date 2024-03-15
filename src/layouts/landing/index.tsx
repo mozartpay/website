@@ -10,6 +10,7 @@ import { SidebarContext } from 'contexts/SidebarContext';
 
 // Custom Chakra theme
 export default function Landing() {
+	
 	// states and functions
 	const [ toggleSidebar, setToggleSidebar ] = useState(false); 
 	const getRoute = () => {
