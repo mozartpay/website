@@ -25,10 +25,10 @@ const routes = [
 	},
 	
 	{
-		name: 'Payment',
+		name: 'Add',
 		layout: '/admin',
 		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
-		path: '/payment',
+		path: '/add',
 		component: DataTables
 	},
 	{

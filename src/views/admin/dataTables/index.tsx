@@ -8,6 +8,15 @@ import circle from 'assets/img/dashboards/circle1.jpeg';
 import { Input } from '@chakra-ui/react'
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import {
+	FreighterModule,
+	StellarWalletsKit,
+	WalletNetwork,
+	XBULL_ID,
+	xBullModule
+  } from '@creit.tech/stellar-wallets-kit';
+
+  
 
 
 export default function Settings() {
@@ -19,7 +28,8 @@ export default function Settings() {
 	const userData = localStorage.getItem('user');
 	const { email } = JSON.parse(userData);
 
-	const handlePayment = async () => {
+
+	const handleAddWithAirtm = async () => {
 		try {
 			const response = await axios.post<{
 				[x: string]: any; data: any
@@ -38,34 +48,40 @@ export default function Settings() {
 		}
 	};
 
-	const handleFreighterPayment = async () => {
+	const handleAddWithFreighter = async () => {
+	
 		try {
-			const response = await fetch("http://localhost:8000/api/freighter/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ email, amount }), // Send email and amount
-			});
 
-			if (response.ok) {
-				const data = await response.json();
-				const { signedTransaction } = data;
-				console.log('signedTransaction',signedTransaction)
-			} else {
-				const errorData = await response.json();
-				console.error("Payment error:", errorData.error);
-			}
+
 		} catch (error) {
-			console.error("Error handling payment:", error);
+			alert("error")
 		}
+		// try {
+			// const response = await fetch("http://localhost:8000/api/freighter/", {
+			// 	method: "POST",
+			// 	headers: {
+			// 		"Content-Type": "application/json",
+			// 	},
+			// 	body: JSON.stringify({ email, amount }), // Send email and amount
+			// });
+
+			// if (response.ok) {
+			// 	const data = await response.json();
+			// 	const { signedTransaction } = data;
+			// 	console.log('signedTransaction',signedTransaction)
+			// } else {
+				// const errorData = await response.json();
+				// console.error("Payment error:", errorData.error);
+ 
+			// console.error("Error handling payment:", error);
+		// }
 	};
 
 	const textColor = useColorModeValue('secondaryGray.900', 'white');
 	return (
 		<Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
 			<Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-				Please enter the amount :
+				Please enter the amount to add to your balance:
 			</Text>
 			<InputGroup>
 				<InputLeftElement
@@ -159,96 +175,15 @@ export default function Settings() {
 									borderRadius='70px'
 									px='24px'
 									py='5px'
-									onClick={handlePayment}>
-									Choose
+									onClick={handleAddWithAirtm}>
+									Add
 								</Button>
 							</Flex>
 						</Flex>
 					</Flex>
 				</Card>
+			
 				{/* <Card p='20px'>
-					<Flex direction={{ base: 'column' }} justify='center'>
-						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
-							<Image
-								src={circle}
-								w={{ base: '100%', '3xl': '100%' }}
-								h={{ base: '100%', '3xl': '100%' }}
-								borderRadius='20px'
-							/>
-						</Box>
-						<Flex flexDirection='column' justify='space-between' h='100%'>
-							<Flex
-								justify='space-between'
-								direction={{
-									base: 'row',
-									md: 'column',
-									lg: 'row',
-									xl: 'column',
-									'2xl': 'row'
-								}}
-								mb='auto'>
-								<Flex direction='column'>
-									<Text
-										color={textColor}
-										fontSize={{
-											base: 'xl',
-											md: 'lg',
-											lg: 'lg',
-											xl: 'lg',
-											'2xl': 'md',
-											'3xl': 'lg'
-										}}
-										mb='5px'
-										fontWeight='bold'
-										me='14px'>
-										CIRCLE
-									</Text>
-									<Text
-										color='secondaryGray.600'
-										fontSize={{
-											base: 'sm'
-										}}
-										fontWeight='400'
-										me='14px'>
-										Global payments made easy!
-									</Text>
-								</Flex>
-
-							</Flex>
-							<Flex
-								align={{
-									base: 'center',
-									md: 'start',
-									lg: 'center',
-									xl: 'start',
-									'2xl': 'center'
-								}}
-								justify='space-between'
-								direction={{
-									base: 'row',
-									md: 'column',
-									lg: 'row',
-									xl: 'column',
-									'2xl': 'row'
-								}}
-								mt='25px'>
-
-								<Button
-									variant='darkBrand'
-									color='white'
-									fontSize='sm'
-									fontWeight='500'
-									borderRadius='70px'
-									px='24px'
-									py='5px'
-									onClick={handlePayment}>
-									Choose
-								</Button>
-							</Flex>
-						</Flex>
-					</Flex>
-				</Card> */}
-				<Card p='20px'>
 					<Flex direction={{ base: 'column' }} justify='center'>
 						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
 							<Image
@@ -323,13 +258,13 @@ export default function Settings() {
 									borderRadius='70px'
 									px='24px'
 									py='5px'
-									onClick={handleFreighterPayment}>
-									Choose
+									onClick={handleAddWithFreighter}>
+									Add
 								</Button>
 							</Flex>
 						</Flex>
 					</Flex>
-				</Card>
+				</Card> */}
 			</SimpleGrid>
 
 		</Box>

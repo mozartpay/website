@@ -43,7 +43,7 @@ export default function UserReports() {
 	return (
 		<Box pt={{ base: '130px', md: '100px', xl: '80px' }}>
 			<SimpleGrid columns={{ base: 1, md: 3, lg: 3, '2xl': 6 }} gap='20px' mb='20px'>
-			<MiniStatistics
+			{/* <MiniStatistics
 					startContent={
 						<Box w='56px' h='56px' bg={boxBg} borderRadius='50%' display='flex' alignItems='center' justifyContent='center'>
 						<div style={{ width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden' }}>
@@ -56,9 +56,9 @@ export default function UserReports() {
 						</div>
 					  </Box>
 					}
-					name='AIRTM'
+					name='Balance'
 					value='$350.4'
-				/>
+				/> */}
 				<MiniStatistics
 					startContent={
 						<IconBox
@@ -68,7 +68,7 @@ export default function UserReports() {
 							icon={<Icon w='32px' h='32px' as={MdAttachMoney} color={brandColor} />}
 						/>
 					}
-					name='Spend this month'
+					name='Balance'
 					value='$642.39'
 				/>
 				{/** <MiniStatistics growth='+23%' name='Sales' value='$574.34' />*/}
