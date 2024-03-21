@@ -48,35 +48,6 @@ export default function Settings() {
 		}
 	};
 
-	const handleAddWithFreighter = async () => {
-	
-		try {
-
-
-		} catch (error) {
-			alert("error")
-		}
-		// try {
-			// const response = await fetch("http://localhost:8000/api/freighter/", {
-			// 	method: "POST",
-			// 	headers: {
-			// 		"Content-Type": "application/json",
-			// 	},
-			// 	body: JSON.stringify({ email, amount }), // Send email and amount
-			// });
-
-			// if (response.ok) {
-			// 	const data = await response.json();
-			// 	const { signedTransaction } = data;
-			// 	console.log('signedTransaction',signedTransaction)
-			// } else {
-				// const errorData = await response.json();
-				// console.error("Payment error:", errorData.error);
- 
-			// console.error("Error handling payment:", error);
-		// }
-	};
-
 	const textColor = useColorModeValue('secondaryGray.900', 'white');
 	return (
 		<Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
@@ -183,88 +154,6 @@ export default function Settings() {
 					</Flex>
 				</Card>
 			
-				{/* <Card p='20px'>
-					<Flex direction={{ base: 'column' }} justify='center'>
-						<Box mb={{ base: '20px', '2xl': '20px' }} position='relative'>
-							<Image
-								src={freighter}
-								w={{ base: '100%', '3xl': '100%' }}
-								h={{ base: '100%', '3xl': '100%' }}
-								borderRadius='20px'
-							/>
-						</Box>
-						<Flex flexDirection='column' justify='space-between' h='100%'>
-							<Flex
-								justify='space-between'
-								direction={{
-									base: 'row',
-									md: 'column',
-									lg: 'row',
-									xl: 'column',
-									'2xl': 'row'
-								}}
-								mb='auto'>
-								<Flex direction='column'>
-									<Text
-										color={textColor}
-										fontSize={{
-											base: 'xl',
-											md: 'lg',
-											lg: 'lg',
-											xl: 'lg',
-											'2xl': 'md',
-											'3xl': 'lg'
-										}}
-										mb='5px'
-										fontWeight='bold'
-										me='14px'>
-										Freighter
-									</Text>
-									<Text
-										color='secondaryGray.600'
-										fontSize={{
-											base: 'sm'
-										}}
-										fontWeight='400'
-										me='14px'>
-										A Stellar wallet for every website!
-									</Text>
-								</Flex>
-
-							</Flex>
-							<Flex
-								align={{
-									base: 'center',
-									md: 'start',
-									lg: 'center',
-									xl: 'start',
-									'2xl': 'center'
-								}}
-								justify='space-between'
-								direction={{
-									base: 'row',
-									md: 'column',
-									lg: 'row',
-									xl: 'column',
-									'2xl': 'row'
-								}}
-								mt='25px'>
-
-								<Button
-									variant='darkBrand'
-									color='white'
-									fontSize='sm'
-									fontWeight='500'
-									borderRadius='70px'
-									px='24px'
-									py='5px'
-									onClick={handleAddWithFreighter}>
-									Add
-								</Button>
-							</Flex>
-						</Flex>
-					</Flex>
-				</Card> */}
 			</SimpleGrid>
 
 		</Box>
